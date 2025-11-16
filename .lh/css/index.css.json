@@ -1,0 +1,46 @@
+{
+    "sourceFile": "css/index.css",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 7,
+            "patches": [
+                {
+                    "date": 1761586685327,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1761586792860,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,9 +41,9 @@\n  .main-heading{\n text-align: center;\n \n }\n-.main-heading h2{ \n+.main-title h2{ \n   font-size: 40px;\n     position: relative;\n     font-weight: normal;\n     margin-bottom: 70px;\n"
+                },
+                {
+                    "date": 1761586806300,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,16 +49,16 @@\n     margin-bottom: 70px;\n      text-transform: uppercase;\n       \n }\n-.main-heading p{\n+.main-title p{\n   width: 550px;\n   max-width: 100%;\n   line-height:2;\n   color: #777;\n   margin: 0 auto 100px;\n }\n-.main-heading h2:after{\n+.main-title h2:after{\n content: \"\";\n     border: 2px solid #333;\n     position: absolute;\n     width: 14px;\n"
+                },
+                {
+                    "date": 1761586811749,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,9 +68,9 @@\n     bottom: -38px;\n     left: 50%;\n     transform: translateX(-50%);\n }\n-.main-heading h2::before{\n+.main-title h2::before{\n content: \"\";\n     position: absolute;\n     left: 50%;\n     transform: translateX(-50%);\n"
+                },
+                {
+                    "date": 1761586905913,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,6 @@\n+\n+\n html{\n     scroll-behavior: smooth;\n }\n body {\n"
+                },
+                {
+                    "date": 1761586913548,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,8 @@\n \n-\n+:root{\n+    main\n+}\n html{\n     scroll-behavior: smooth;\n }\n body {\n"
+                },
+                {
+                    "date": 1761586979550,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n \n :root{\n-    --main\n+    --main-\n }\n html{\n     scroll-behavior: smooth;\n }\n"
+                },
+                {
+                    "date": 1761587263752,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -105,7 +105,7 @@\n }\n .header .links li{\n \n }\n-.header .links{\n+.header .links li a{\n \n }\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1761586685327,
+            "name": "Commit-0",
+            "content": "html{\n    scroll-behavior: smooth;\n}\nbody {\n      font-family: \"Work Sans\", sans-serif;\n\n\n}\n.container{\n    margin-left: auto;\n    margin-right: auto;\n    padding-left: 15px;\n    padding-right: 15px;\n}\n/* Small */\n@media (min-width: 768px) {\n  .container {\n    width: 750px;\n  }\n}\n/* Medium */\n@media (min-width: 992px) {\n  .container {\n    width: 970px;\n  }\n}\n/* Large */\n@media (min-width: 1200px) {\n  .container {\n    width: 1170px;\n  }\n}\nul{\n    list-style: none;\n}\na{\n    text-decoration: none;\n} \n\n\n .main-heading{\ntext-align: center;\n\n}\n.main-heading h2{ \n  font-size: 40px;\n    position: relative;\n    font-weight: normal;\n    margin-bottom: 70px;\n     text-transform: uppercase;\n      \n}\n.main-heading p{\n  width: 550px;\n  max-width: 100%;\n  line-height:2;\n  color: #777;\n  margin: 0 auto 100px;\n}\n.main-heading h2:after{\ncontent: \"\";\n    border: 2px solid #333;\n    position: absolute;\n    width: 14px;\n    height: 14px;\n    border-radius: 50%;\n    background-color: white;\n    bottom: -38px;\n    left: 50%;\n    transform: translateX(-50%);\n}\n.main-heading h2::before{\ncontent: \"\";\n    position: absolute;\n    left: 50%;\n    transform: translateX(-50%);\n    width: 120px;\n    height: 2px;\n    background-color: #333;\n    bottom: -30px;\n   \n} \n"
+        }
+    ]
+}
