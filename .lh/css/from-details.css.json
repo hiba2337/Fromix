@@ -1,0 +1,38 @@
+{
+    "sourceFile": "css/from-details.css",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1762721848642,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1762721865269,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,4 +43,80 @@\n \n *:focus{\n   outline: none;\n }\n+.courses{\n+  display: flex;\n+  min-height: 100vh;\n+  \n+}\n+.side-bar{\n+background-color: white;\n+padding: 20px 0;\n+position: relative;\n+width: 230px;\n+ box-shadow: 0 0 10px #ddd;\n+\n+\n+}\n+@media(max-width:767px){\n+.side-bar {\n+    width: fit-content;\n+    padding: 10px 2px;\n+  }\n+}\n+@media(min-width:767px) and (max-width:991px){\n+  .side-bar {\n+    width: 200px;\n+            padding: 10px 0;\n+  }\n+}\n+.side-bar .logo{\n+color: var(--main-color);\n+    font-size: 35px;\n+    text-align: center;\n+    border-bottom: 1px solid #eee;\n+    padding-bottom: 50px;\n+}\n+@media(max-width:767px){\n+.side-bar .logo {\n+  font-size: 16px;\n+    padding-bottom: 15px; \n+  }\n+}\n+.side-bar ul{\n+  padding: 0;\n+}\n+.side-bar ul li{\n+    padding: 20px;\n+    border-bottom: 1px solid #eee;\n+    transition: var(--main-transition-duration);\n+   \n+}\n+.side-bar ul li:hover{\n+  background-color: var(--main-color);\n+}\n+.side-bar ul li:hover a {\n+  color: white;\n+}\n+.side-bar ul li a{\n+text-align: center;\n+display: flex;\n+    font-size: 17px;\n+    color: black;\n+    font-weight: 500;\n+\n+}\n+.side-bar ul li a i{\n+  margin-right: 15px;\n+}\n+.side-bar ul li span{\n+   display: block;\n+   transition: var(--main-transition-duration);\n+}\n+@media(max-width:767px){\n+  .side-bar ul li a span {\n+    display: none;\n+  } \n+}\n+\n+/* end side bare */\n"
+                },
+                {
+                    "date": 1762721879891,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,8 +43,9 @@\n \n *:focus{\n   outline: none;\n }\n+/* start sidebare */\n .courses{\n   display: flex;\n   min-height: 100vh;\n   \n@@ -118,5 +119,5 @@\n     display: none;\n   } \n }\n \n-/* end side bare */\n\\ No newline at end of file\n+/* end side bare */\n"
+                },
+                {
+                    "date": 1762721900536,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n *:focus{\n   outline: none;\n }\n /* start sidebare */\n-.courses{\n+.cours-d{\n   display: flex;\n   min-height: 100vh;\n   \n }\n"
+                },
+                {
+                    "date": 1762721994716,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -120,5 +120,5 @@\n   } \n }\n \n /* end side bare */\n-/* start contetn */\n\\ No newline at end of file\n+/* start contet */\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1762722002325,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,126 @@\n+:root {\n+  --main-color: #0075FF;\n+  --section-color: #F7F8FA;\n+  --font-color: #223A58;\n+  --main-transition-duration: 0.3s; \n+  --footer-color:#191919;\n+  -o-animation-delay:#777;\n+}\n+  *{\n+  box-sizing: border-box;\n+  padding:0;\n+  margin: 0;\n+}\n+html{\n+    scroll-behavior: smooth;\n+}\n+body {\n+      font-family: \"Work Sans\", sans-serif;\n+   margin: 0;\n+   padding:0;\n+   background-color: var(--section-color);\n+\n+}\n+\n+ul {\n+  list-style: none;\n+}\n+\n+a {\n+  text-decoration: none;\n+}\n+\n+::-webkit-scrollbar {\n+  width: 15px;\n+}\n+::-webkit-scrollbar-track {\n+  background-color: white;\n+}\n+::-webkit-scrollbar-thumb {\n+  background-color: var(--main-color);\n+   \n+}\n+\n+*:focus{\n+  outline: none;\n+}\n+/* start sidebare */\n+.cours-details{\n+  display: flex;\n+  min-height: 100vh;\n+  \n+}\n+.side-bar{\n+background-color: white;\n+padding: 20px 0;\n+position: relative;\n+width: 230px;\n+ box-shadow: 0 0 10px #ddd;\n+\n+\n+}\n+@media(max-width:767px){\n+.side-bar {\n+    width: fit-content;\n+    padding: 10px 2px;\n+  }\n+}\n+@media(min-width:767px) and (max-width:991px){\n+  .side-bar {\n+    width: 200px;\n+            padding: 10px 0;\n+  }\n+}\n+.side-bar .logo{\n+color: var(--main-color);\n+    font-size: 35px;\n+    text-align: center;\n+    border-bottom: 1px solid #eee;\n+    padding-bottom: 50px;\n+}\n+@media(max-width:767px){\n+.side-bar .logo {\n+  font-size: 16px;\n+    padding-bottom: 15px; \n+  }\n+}\n+.side-bar ul{\n+  padding: 0;\n+}\n+.side-bar ul li{\n+    padding: 20px;\n+    border-bottom: 1px solid #eee;\n+    transition: var(--main-transition-duration);\n+   \n+}\n+.side-bar ul li:hover{\n+  background-color: var(--main-color);\n+}\n+.side-bar ul li:hover a {\n+  color: white;\n+}\n+.side-bar ul li a{\n+text-align: center;\n+display: flex;\n+    font-size: 17px;\n+    color: black;\n+    font-weight: 500;\n+\n+}\n+.side-bar ul li a i{\n+  margin-right: 15px;\n+}\n+.side-bar ul li span{\n+   display: block;\n+   transition: var(--main-transition-duration);\n+}\n+@media(max-width:767px){\n+  .side-bar ul li a span {\n+    display: none;\n+  } \n+}\n+\n+/* end side bare */\n+/* start content */\n+\n+/* start content */\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1762721848642,
+            "name": "Commit-0",
+            "content": ":root {\n  --main-color: #0075FF;\n  --section-color: #F7F8FA;\n  --font-color: #223A58;\n  --main-transition-duration: 0.3s; \n  --footer-color:#191919;\n  -o-animation-delay:#777;\n}\n  *{\n  box-sizing: border-box;\n  padding:0;\n  margin: 0;\n}\nhtml{\n    scroll-behavior: smooth;\n}\nbody {\n      font-family: \"Work Sans\", sans-serif;\n   margin: 0;\n   padding:0;\n   background-color: var(--section-color);\n\n}\n\nul {\n  list-style: none;\n}\n\na {\n  text-decoration: none;\n}\n\n::-webkit-scrollbar {\n  width: 15px;\n}\n::-webkit-scrollbar-track {\n  background-color: white;\n}\n::-webkit-scrollbar-thumb {\n  background-color: var(--main-color);\n   \n}\n\n*:focus{\n  outline: none;\n}"
+        }
+    ]
+}

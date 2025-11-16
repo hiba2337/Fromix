@@ -1,0 +1,50 @@
+{
+    "sourceFile": "css/index2.css",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 8,
+            "patches": [
+                {
+                    "date": 1761599678176,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1761599709812,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -113,4 +113,105 @@\n \n a {\n   text-decoration: none;\n }\n+header{\n+position: absolute;\n+    width: 100%;\n+    left: 0;\n+    z-index: 2;\n+}\n+header .container{\n+  display: flex;\n+  justify-content: space-between;\n+ align-items: center;\n+ position: relative;\n+ min-height: 97px;\n+}\n+header .container::after{\n+  content: \"\";\n+  position: absolute;\n+  height: 1px;\n+  background-color: #a2a2a2;\n+  bottom: 0;\n+  width: calc(100% - 30px);\n+  z-index: -1;\n+\n+}\n+header .logo img{\n+  height: 40px;\n+}\n+header nav {\n+  display: flex;\n+  flex: 1;\n+  align-items: center;\n+  justify-content: flex-end;\n+}\n+header nav .toggle-menu{\n+  color: white;\n+  font-size: 22px;\n+\n+}\n+header nav .toggle-menu:hover + ul{\n+  display: flex;\n+  flex-direction: column;\n+  position: absolute;\n+    top: 100%;\n+    left: 0;\n+    width: 100%;\n+   background-color: rgba(0, 0, 0, 0.6);\n+}\n+@media (min-width:768px){\n+ header nav .toggle-menu{\n+  display: none;\n+ }\n+}\n+header nav ul{\n+  display: flex;\n+}\n+@media (max-width:767px){\n+header nav ul{\n+  display: none;\n+}\n+}\n+header nav ul li a{\n+ color: white;\n+ padding: 15px 10px;\n+ font-size: 14px;\n+ display: block;\n+ transition: 0.3s;\n+}\n+header nav ul li .active{\n+  color: #1EA0E3;\n+  position: relative;\n+}\n+header nav ul li a.active,\n+header nav ul li a:hover{\n+color: var(--main-color);\n+border-bottom: 1px solid var(--main-color);\n+}\n+header nav .form{\n+  width: 40px;\n+  height: 30px;\n+ border-left: 1px solid white;\n+ position: relative;\n+   margin-left: 30px;\n+}\n+header nav .form i{\n+  color: white;\n+  position: absolute;\n+    top: 50%;\n+    transform: translateY(-50%);\n+    right: 0;\n+    font-size: 20px;\n+}\n+\n+/* end  header */\n+\n+\n+/* statr lanidng */\n+.landing{\n+  min-height: 100vh;\n+  background-image: url(../igm/landing.jpg);\n+  background-size: cover;\n+  position: relative;\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1761599723958,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -126,18 +126,9 @@\n  align-items: center;\n  position: relative;\n  min-height: 97px;\n }\n-header .container::after{\n-  content: \"\";\n-  position: absolute;\n-  height: 1px;\n-  background-color: #a2a2a2;\n-  bottom: 0;\n-  width: calc(100% - 30px);\n-  z-index: -1;\n \n-}\n header .logo img{\n   height: 40px;\n }\n header nav {\n"
+                },
+                {
+                    "date": 1761599743515,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -127,10 +127,17 @@\n  position: relative;\n  min-height: 97px;\n }\n \n-header .logo img{\n-  height: 40px;\n+header .logo {\n+  color: white;\n+  font-size: 35px;\n+  font-weight: bold;\n+  height: 80px;\n+  display: flex;\n+  justify-content: center;\n+  align-items: center;\n+  \n }\n header nav {\n   display: flex;\n   flex: 1;\n"
+                },
+                {
+                    "date": 1761599766415,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -143,9 +143,9 @@\n   flex: 1;\n   align-items: center;\n   justify-content: flex-end;\n }\n-header nav .toggle-menu{\n+header nav .fa-solid{\n   color: white;\n   font-size: 22px;\n \n }\n"
+                },
+                {
+                    "date": 1761599778013,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -148,9 +148,9 @@\n   color: white;\n   font-size: 22px;\n \n }\n-header nav .toggle-menu:hover + ul{\n+header nav .fa-solid:hover + ul{\n   display: flex;\n   flex-direction: column;\n   position: absolute;\n     top: 100%;\n@@ -158,9 +158,9 @@\n     width: 100%;\n    background-color: rgba(0, 0, 0, 0.6);\n }\n @media (min-width:768px){\n- header nav .toggle-menu{\n+ header nav .fa-solid{\n   display: none;\n  }\n }\n header nav ul{\n"
+                },
+                {
+                    "date": 1761599789971,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -177,12 +177,9 @@\n  font-size: 14px;\n  display: block;\n  transition: 0.3s;\n }\n-header nav ul li .active{\n-  color: #1EA0E3;\n-  position: relative;\n-}\n+\n header nav ul li a.active,\n header nav ul li a:hover{\n color: var(--main-color);\n border-bottom: 1px solid var(--main-color);\n"
+                },
+                {
+                    "date": 1761599796026,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -178,13 +178,9 @@\n  display: block;\n  transition: 0.3s;\n }\n \n-header nav ul li a.active,\n-header nav ul li a:hover{\n-color: var(--main-color);\n-border-bottom: 1px solid var(--main-color);\n-}\n+\n header nav .form{\n   width: 40px;\n   height: 30px;\n  border-left: 1px solid white;\n"
+                },
+                {
+                    "date": 1761599802118,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -179,24 +179,10 @@\n  transition: 0.3s;\n }\n \n \n-header nav .form{\n-  width: 40px;\n-  height: 30px;\n- border-left: 1px solid white;\n- position: relative;\n-   margin-left: 30px;\n-}\n-header nav .form i{\n-  color: white;\n-  position: absolute;\n-    top: 50%;\n-    transform: translateY(-50%);\n-    right: 0;\n-    font-size: 20px;\n-}\n \n+\n /* end  header */\n \n \n /* statr lanidng */\n"
+                }
+            ],
+            "date": 1761599678176,
+            "name": "Commit-0",
+            "content": "\n:root {\n  --main-color: #0075FF;\n  --section-color: #F7F8FA;\n  --font-color: #223A58;\n  --main-transition-duration: 0.3s; \n}\n\n.container{\n    margin-left: auto;\n    margin-right: auto;\n    padding-left: 15px;\n    padding-right: 15px;\n}\n/* Small */\n@media (min-width: 768px) {\n  .container {\n    width: 750px;\n  }\n}\n/* Medium */\n@media (min-width: 992px) {\n  .container {\n    width: 970px;\n  }\n}\n/* Large */\n@media (min-width: 1200px) {\n  .container {\n    width: 1170px;\n  }\n}\n.main-title {\n  padding: 8px 15px;\n  width: fit-content;\n  position: relative;\n  margin: 0 auto 80px;\n  border: 2px solid black;\n  font-size: 30px;\n  z-index: 1;\n  text-transform: uppercase;\n  transition: var(--main-transition-duration);\n}\n\n.main-title:hover {\n  color: white;\n  border: 2px solid white;\n  transition: 0.5s;\n}\n\n.main-title::before,\n.main-title::after {\n  content: \"\";\n  position: absolute;\n  background-color: var(--main-color);\n  border-radius: 50%;\n  width: 12px;\n  height: 12px;\n  top: 50%;\n  transform: translateY(-50%);\n}\n\n.main-title::before {\n  left: -30px;\n}\n\n.main-title::after {\n  right: -30px;\n}\n\n.main-title:hover::before {\n  z-index: -1;\n  animation: move-left 0.5s linear forwards;\n}\n\n.main-title:hover::after {\n  z-index: -1;\n  animation: move-right 0.5s linear forwards;\n}\n\n@keyframes move-left {\n  50% {\n    left: 0;\n    width: 12px;\n    height: 12px;\n  }\n  100% {\n    left: 0;\n    height: 100%;\n    width: 60%;\n    border-radius: 0;\n  }\n}\n\n@keyframes move-right {\n  50% {\n    right: 0;\n    width: 12px;\n    height: 12px;\n  }\n  100% {\n    right: 0;\n    height: 100%;\n    width: 60%;\n    border-radius: 0;\n  }\n}\n\n\nul {\n  list-style: none;\n}\n\na {\n  text-decoration: none;\n}\n"
+        }
+    ]
+}

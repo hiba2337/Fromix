@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paiement par Virement Bancaire</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f4f6f8;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      padding: 40px 10px;
+    }
+    .payment-container {
+      background: #fff;
+      max-width: 600px;
+      width: 100%;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      position: relative;
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    .bank-info {
+      background: #f9f9f9;
+      padding: 15px;
+      border-left: 4px solid #007bff;
+      margin-bottom: 25px;
+      border-radius: 10px;
+    }
+    .bank-info p {
+      margin: 8px 0;
+      font-size: 15px;
+    }
+    form label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: #333;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+    input[type="file"] {
+      border: none;
+      background: #f0f0f0;
+      padding: 10px;
+    }
+    button {
+      width: 100%;
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    .note {
+      background: #eaf4ff;
+      padding: 10px;
+      border-radius: 8px;
+      font-size: 13px;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    /* ===== Popup ===== */
+    .popup {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.4);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      visibility: hidden;
+      opacity: 0;
+      transition: 0.3s;
+    }
+    .popup.active {
+      visibility: visible;
+      opacity: 1;
+    }
+    .popup-content {
+      background: #fff;
+      padding: 25px 35px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      max-width: 400px;
+      width: 90%;
+    }
+    .popup-content h3 {
+      color: #007bff;
+      margin-bottom: 10px;
+    }
+    .popup-content p {
+      color: #555;
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+    .popup-content a {
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 25px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .popup-content a:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="payment-container">
+    <h2>Paiement par Virement Bancaire</h2>
+
+    <div class="note">
+      Veuillez effectuer un virement vers le compte ci-dessous puis téléversez le reçu du paiement.
+    </div>
+
+    <div class="bank-info">
+      <p><strong>Banque :</strong> Banque Nationale d’Algérie</p>
+      <p><strong>Nom du bénéficiaire :</strong> Hiba Kherroubi</p>
+      <p><strong>Numéro de compte :</strong> 123 456 789 001</p>
+      <p><strong>IBAN :</strong> DZ12 3456 7890 0000 0012 34</p>
+    </div>
+
+    <form id="paymentForm">
+      <label>Nom complet</label>
+      <input type="text" placeholder="Entrez votre nom complet" required>
+
+      <label>Email</label>
+      <input type="email" placeholder="exemple@email.com" required>
+
+      <label>Montant envoyé (DZD)</label>
+      <input type="number" placeholder="Ex: 2000" required>
+
+      <label>Téléverser le reçu de paiement</label>
+      <input type="file" accept=".jpg, .png, .pdf" required>
+
+      <button type="submit">Envoyer la preuve de paiement</button>
+    </form>
+  </div>
+
+  <!-- نافذة التأكيد -->
+  <div class="popup" id="popup">
+    <div class="popup-content">
+      <h3>Merci ! 🎉</h3>
+      <p>Votre reçu a été envoyé avec succès. Nous vérifierons votre paiement sous peu.</p>
+   <a href="formation.html" id="closePopup">Fermer</a>      
+     
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('paymentForm');
+    const popup = document.getElementById('popup');
+    const closeBtn = document.getElementById('closePopup');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      popup.classList.add('active');
+      form.reset();
+    });
+
+    closeBtn.addEventListener('click', () => {
+      popup.classList.remove('active');
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+{
+    "sourceFile": "formation.html",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1761560816676,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1761560828130,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <!DOCTYPE html>\n-<html lang=\"'n\">\n+<html lang=\"'\">\n <head>\n     <meta charset=\"UTF-8\">\n     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n     <title>Document</title>\n"
+                },
+                {
+                    "date": 1761560844892,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,16 @@\n+<!DOCTYPE html>\n+<html lang=\"en\">\n+<head>\n+    <meta charset=\"UTF-8\">\n+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n+<!-- font awsome -->\n+<script src=\"https://kit.fontawesome.com/f14d152ebc.js\" crossorigin=\"anonymous\"></script>\n+  <!-- google font -->\n+      <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n+      <!-- font family -->\n+<link href=\"https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap\" rel=\"stylesheet\">\n+    <title>Formix / Blog</title></head>\n+<body>\n+    \n+</body>\n+</html>\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1761560816676,
+            "name": "Commit-0",
+            "content": ""
+        }
+    ]
+}
