@@ -3,9 +3,330 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dashboard - Fromix</title>
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="../assets/css/global/normalize.css">
+    <link rel="stylesheet" href="../assets/css/pages/dashboard.css">
 </head>
 <body>
-    
+    <!-- Sidebar -->
+        <aside class="side-bar">
+            <h3 class="logo"> Formix </h3>
+            <ul>
+                <li>
+            <a  href="dashboard.html">
+              <i class="fa-regular fa-chart-bar fa-fw"></i>
+              <span>Dashboard</span>
+            </a>
+                <li>
+            <a  href="formation.html">
+              <i class="fa-solid fa-graduation-cap fa-fw"></i>
+              <span>Courses</span>
+            </a>
+          </li>
+                <li>
+                       <a  href="eventement.html">
+             <i class="fa-solid fa-calendar-days"></i>
+              <span>Events</span>
+            </a>
+                </li>
+                <li>
+                       <a  href="panier.html">
+            <i class="fa-solid fa-cart-shopping"></i>
+              <span>Cart</span>
+            </a>
+                </li>
+                <li>
+                       <a  href="Blog.html">
+           <i class="fa-solid fa-pen-nib"></i>
+
+              <span>Blog</span>
+            </a>
+                </li>
+               
+                <li>
+                       <a  href="contact.html">
+        <i class="fa-solid fa-phone"></i>
+
+
+              <span>Contact</span>
+            </a>
+                </li>
+               
+                <li>
+                       <a  href="../index.html">
+<i class="fa-solid fa-right-from-bracket"></i>
+
+
+
+              <span>Log Out</span>
+            </a>
+                </li>
+               
+                
+            </ul>
+        </aside>
+
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Header -->
+        <header class="dashboard-header">
+            <div class="header-left">
+                <h1>Dashboard</h1>
+                <p>Bienvenue, <strong>narimane MEZAZGA</strong></p>
+            </div>
+            <div class="header-right">
+                <div class="search-box">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"/>
+                        <path d="M21 21l-4.35-4.35"/>
+                    </svg>
+                    <input type="text" placeholder="Rechercher une formation...">
+                </div>
+                <button class="notifications-btn">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+                        <path d="M13.73 21a2 2 0 01-3.46 0"/>
+                    </svg>
+                    <span class="badge">3</span>
+                </button>
+                <div class="user-profile">
+                    <img src="../assets/images/testimonials/testi6.png" alt="Profile">
+                </div>
+            </div>
+        </header>
+
+        <!-- Stats Cards -->
+        <section class="stats-section">
+            <div class="stat-card">
+                <div class="stat-icon blue">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/>
+                        <path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/>
+                    </svg>
+                </div>
+                <div class="stat-info">
+                    <h3>8</h3>
+                    <p>Formations Actives</p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon green">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                    </svg>
+                </div>
+                <div class="stat-info">
+                    <h3>125</h3>
+                    <p>Heures d'Apprentissage</p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon purple">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                </div>
+                <div class="stat-info">
+                    <h3>5</h3>
+                    <p>Certificats Obtenus</p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon orange">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <polyline points="12 6 12 12 16 14"/>
+                    </svg>
+                </div>
+                <div class="stat-info">
+                    <h3>72%</h3>
+                    <p>Taux de Complétion</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content Grid -->
+        <div class="content-grid">
+            <!-- Current Courses -->
+            <section class="courses-section">
+                <div class="section-header">
+                    <h2>Formations en Cours</h2>
+                    <a href="#" class="view-all">Voir tout →</a>
+                </div>
+
+                <div class="courses-list">
+                    <div class="course-item">
+                        <img src="../assets/images/courses/web dev-courses.png" alt="Course">
+                        <div class="course-details">
+                            <h3>Développement Web Full Stack</h3>
+                            <p>Ahmed Khalil</p>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 65%;"></div>
+                            </div>
+                            <div class="course-meta">
+                                <span>65% complété</span>
+                                <span>15h restantes</span>
+                            </div>
+                        </div>
+                        <button class="continue-btn">Continuer</button>
+                    </div>
+
+                    <div class="course-item">
+                        <img src="../assets/images/courses/course02.png" alt="Course">
+                        <div class="course-details">
+                            <h3>Design Graphique & UI/UX</h3>
+                            <p>Sara Mohamed</p>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 40%;"></div>
+                            </div>
+                            <div class="course-meta">
+                                <span>40% complété</span>
+                                <span>21h restantes</span>
+                            </div>
+                        </div>
+                        <button class="continue-btn">Continuer</button>
+                    </div>
+
+                    <div class="course-item">
+                        <img src="../assets/images/courses/course03.png" alt="Course">
+                        <div class="course-details">
+                            <h3>Marketing Digital</h3>
+                            <p>Ali Hassan</p>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 85%;"></div>
+                            </div>
+                            <div class="course-meta">
+                                <span>85% complété</span>
+                                <span>4h restantes</span>
+                            </div>
+                        </div>
+                        <button class="continue-btn">Continuer</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Activity & Certificates -->
+            <aside class="sidebar-content">
+                <!-- Recent Activity -->
+                <section class="activity-section">
+                    <h3>Activité Récente</h3>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-icon completed">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                            </div>
+                            <div class="activity-details">
+                                <p><strong>Chapitre terminé</strong></p>
+                                <span>JavaScript Avancé</span>
+                                <time>Il y a 2 heures</time>
+                            </div>
+                        </div>
+
+                        <div class="activity-item">
+                            <div class="activity-icon certificate">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                            </div>
+                            <div class="activity-details">
+                                <p><strong>Certificat obtenu</strong></p>
+                                <span>Python Basics</span>
+                                <time>Hier</time>
+                            </div>
+                        </div>
+
+                        <div class="activity-item">
+                            <div class="activity-icon started">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polygon points="5 3 19 12 5 21 5 3"/>
+                                </svg>
+                            </div>
+                            <div class="activity-details">
+                                <p><strong>Formation démarrée</strong></p>
+                                <span>React.js Complet</span>
+                                <time>Il y a 3 jours</time>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Certificates -->
+                <section class="certificates-section">
+                    <h3>Mes Certificats</h3>
+                    <div class="certificates-list">
+                        <div class="certificate-card">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+                                <polyline points="14 2 14 8 20 8"/>
+                            </svg>
+                            <div>
+                                <h4>HTML & CSS Mastery</h4>
+                                <p>Décembre 2024</p>
+                            </div>
+                            <button class="download-btn">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
+                                    <polyline points="7 10 12 15 17 10"/>
+                                    <line x1="12" y1="15" x2="12" y2="3"/>
+                                </svg>
+                            </button>
+                        </div>
+
+                        <div class="certificate-card">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+                                <polyline points="14 2 14 8 20 8"/>
+                            </svg>
+                            <div>
+                                <h4>JavaScript Fundamentals</h4>
+                                <p>Novembre 2024</p>
+                            </div>
+                            <button class="download-btn">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
+                                    <polyline points="7 10 12 15 17 10"/>
+                                    <line x1="12" y1="15" x2="12" y2="3"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Upcoming Events -->
+                <section class="events-section">
+                    <h3>Événements à Venir</h3>
+                    <div class="event-card">
+                        <div class="event-date">
+                            <span class="day">15</span>
+                            <span class="month">DÉC</span>
+                        </div>
+                        <div class="event-details">
+                            <h4>Webinaire: Tendances 2025</h4>
+                            <p>14:00 - 16:00</p>
+                        </div>
+                    </div>
+                    <div class="event-card">
+                        <div class="event-date">
+                            <span class="day">20</span>
+                            <span class="month">DÉC</span>
+                        </div>
+                        <div class="event-details">
+                            <h4>Workshop: Git & GitHub</h4>
+                            <p>10:00 - 12:00</p>
+                        </div>
+                    </div>
+                </section>
+            </aside>
+        </div>
+    </main>
+
 </body>
 </html>
