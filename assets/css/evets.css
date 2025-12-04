@@ -73,11 +73,8 @@ width: 230px;
   }
 }
 .side-bar .logo{
-color: var(--main-color);
-    font-size: 35px;
-    text-align: center;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 50px;
+width: 100%;
+    padding: 10px 20px 30px;
 }
 @media(max-width:767px){
 .side-bar .logo {
@@ -184,7 +181,7 @@ display: flex;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     margin-right: 80px;
     transition: box-shadow 0.3s ease, transform 0.3s ease;
-    
+   
 }
 @media(max-width:767px){
   .event-content header .search-box{
@@ -224,7 +221,7 @@ width: 130px;
  border: none;
  outline: none;
  width: 400px;
-  padding: 10px 15px;
+ padding: 10px 15px;
  font-size: 15px;
  background-color: var(--section-color);
  caret-color: var(--main-color);

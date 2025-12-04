@@ -73,11 +73,8 @@ width: 230px;
   }
 }
 .side-bar .logo{
-color: var(--main-color);
-    font-size: 35px;
-    text-align: center;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 50px;
+width: 100%;
+    padding: 10px 20px 30px;
 }
 @media(max-width:767px){
 .side-bar .logo {
@@ -92,10 +89,7 @@ color: var(--main-color);
     padding: 20px;
     border-bottom: 1px solid #eee;
     transition: var(--main-transition-duration);
-    -webkit-transition:;
-    -moz-transition:;
-    -ms-transition:;
-    -o-transition:;
+   
 }
 .side-bar ul li:hover{
   background-color: var(--main-color);
@@ -117,10 +111,6 @@ display: flex;
 .side-bar ul li span{
    display: block;
    transition: var(--main-transition-duration);
-   -webkit-transition: var(--main-transition-duration);
-   -moz-transition: var(--main-transition-duration);
-   -ms-transition: var(--main-transition-duration);
-   -o-transition: var(--main-transition-duration);
 }
 @media(max-width:767px){
   .side-bar ul li a span {
