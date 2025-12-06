@@ -45,8 +45,8 @@ a {
 *:focus{
   outline: none;
 }
-/* start sidebare */
-.cours-details{
+/* start side bare */
+.courses{
   display: flex;
   min-height: 100vh;
   
@@ -56,7 +56,7 @@ background-color: white;
 padding: 20px 0;
 position: relative;
 width: 230px;
- box-shadow: 0 0 10px #ddd;
+box-shadow: 0 0 10px #ddd;
 
 
 }
@@ -73,11 +73,8 @@ width: 230px;
   }
 }
 .side-bar .logo{
-color: var(--main-color);
-    font-size: 35px;
-    text-align: center;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 50px;
+width: 100%;
+    padding: 10px 20px 30px;
 }
 @media(max-width:767px){
 .side-bar .logo {
@@ -122,15 +119,15 @@ display: flex;
 }
 
 /* end side bare */
+
+
 /* start content */
-.content{
-    display: flex;
+
+.container{
+ margin-top: 20px;
+  display: flex;
 flex-direction: column;
 }
-.content .container{
-  padding: 10px;
-}
-
 .course-main{
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -144,7 +141,7 @@ flex-direction: column;
   }
 }
 
-.content .head{
+.container .head{
     display: flex;
     gap: 30px;
     flex-direction: column;
@@ -152,7 +149,7 @@ flex-direction: column;
     align-items: center;
        
 }
-.content .head h2{
+.container .head h2{
      color: var(--font-color);
     font-size: 30px;
     text-transform: uppercase;
@@ -162,19 +159,19 @@ flex-direction: column;
     line-height: 1.4;
 
 }
-.content .head img{
-    max-width: 100%;
-    width: 90%;
+.container .head img{
+  
+    width: 100%;
     height: 250px;
     border-radius: 20px;
     box-shadow: 0 0 15px #0000008f;
 }
 @media(max-width:767px){
-    .content .head h2{
+    .container .head h2{
         font-size: 20px;
 
     }
-    .content .head img{
+    .container .head img{
 width: 100%;
     height: 150px;
     }
@@ -321,11 +318,11 @@ width: fit-content;
 
  .details {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 30px;
-  padding: 30px;
-  margin-top: 20px;
-  margin-left: 30px;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 30px 0;
+    margin-top: 20px;
+    margin-left: 0;
 }
 @media(max-width:767px){
 .details{
@@ -379,6 +376,7 @@ width: 80px;
   font-size: 15px;
   color: #777;
   margin-bottom: 15px;
+    width: 100%;  
   }
   
   .descr-instr {

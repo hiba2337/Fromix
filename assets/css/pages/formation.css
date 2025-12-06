@@ -48,7 +48,7 @@ a {
 }
 /* start side bare */
 .courses{
-  display: flex;
+display: flex;  
   min-height: 100vh;
   
 }
@@ -74,11 +74,8 @@ box-shadow: 0 0 10px #ddd;
   }
 }
 .side-bar .logo{
-color: var(--main-color);
-    font-size: 35px;
-    text-align: center;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 50px;
+width: 100%;
+    padding: 10px 20px 30px;
 }
 @media(max-width:767px){
 .side-bar .logo {

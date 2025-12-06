@@ -1,0 +1,58 @@
+{
+    "sourceFile": "pages/sign-up.html",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 10,
+            "patches": [
+                {
+                    "date": 1765025180580,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1765025189343,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <!--sign-up.html-->\r\n-\r\n+<?php\r\n <!DOCTYPE html>\r\n <html lang=\"fr\">\r\n <head>\r\n     <meta charset=\"UTF-8\">\r\n"
+                },
+                {
+                    "date": 1765025202551,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <!--sign-up.html-->\r\n-<?php\r\n+\r\n <!DOCTYPE html>\r\n <html lang=\"fr\">\r\n <head>\r\n     <meta charset=\"UTF-8\">\r\n"
+                },
+                {
+                    "date": 1765025495476,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n  Creat Account\r\n     </h2>\r\n     <p>Fields marked with (*) are required.</p>\r\n </div>\r\n-<form action=\"\">\r\n+<form action=\"\" method=\"post\">\r\n  \r\n     <label for=\"name\">Full Name</label>\r\n     <input type=\"text\" name=\"name\" id=\"name\" placeholder=\"Enter Your Name *\" required>\r\n     \r\n"
+                },
+                {
+                    "date": 1765025501268,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n  Creat Account\r\n     </h2>\r\n     <p>Fields marked with (*) are required.</p>\r\n </div>\r\n-<form action=\"\" method=\"post\">\r\n+<form action=\"signup.php\" method=\"post\">\r\n  \r\n     <label for=\"name\">Full Name</label>\r\n     <input type=\"text\" name=\"name\" id=\"name\" placeholder=\"Enter Your Name *\" required>\r\n     \r\n"
+                },
+                {
+                    "date": 1765025587159,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n     <p>Fields marked with (*) are required.</p>\r\n </div>\r\n <form action=\"signup.php\" method=\"post\">\r\n  \r\n-    <label for=\"name\">Full Name</label>\r\n+    <label for=\"name\"></label>\r\n     <input type=\"text\" name=\"name\" id=\"name\" placeholder=\"Enter Your Name *\" required>\r\n     \r\n     <label for=\"email\">Email</label>\r\n     <input type=\"email\" name=\"email\" id=\"email\" placeholder=\"Enter Your Email *\" required>\r\n"
+                },
+                {
+                    "date": 1765025596851,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n     <p>Fields marked with (*) are required.</p>\r\n </div>\r\n <form action=\"signup.php\" method=\"post\">\r\n  \r\n-    <label for=\"name\"></label>\r\n+    <label for=\"name\">Username</label>\r\n     <input type=\"text\" name=\"name\" id=\"name\" placeholder=\"Enter Your Name *\" required>\r\n     \r\n     <label for=\"email\">Email</label>\r\n     <input type=\"email\" name=\"email\" id=\"email\" placeholder=\"Enter Your Email *\" required>\r\n"
+                },
+                {
+                    "date": 1765025848783,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,24 +22,9 @@\n  Creat Account\r\n     </h2>\r\n     <p>Fields marked with (*) are required.</p>\r\n </div>\r\n-<form action=\"signup.php\" method=\"post\">\r\n- \r\n-    <label for=\"name\">Username</label>\r\n-    <input type=\"text\" name=\"name\" id=\"name\" placeholder=\"Enter Your Name *\" required>\r\n-    \r\n-    <label for=\"email\">Email</label>\r\n-    <input type=\"email\" name=\"email\" id=\"email\" placeholder=\"Enter Your Email *\" required>\r\n-     \r\n-    <label for=\"pass\">Password</label>\r\n-  <input type=\"password\" name=\"pass\" id=\"email\" placeholder=\"Enter Your Password *\" required>\r\n-   \r\n-  <label for=\"phone\">Your Phone</label>\r\n-     <input type=\"text\" placeholder=\"Enter Your Phone\">\r\n-    \r\n-     <input type=\"submit\" name=\"creat\" id=\"send\" value=\"Sign-up\">\r\n-</form>\r\n+ٍّ\r\n <div class=\"sing-in\">\r\n     <p>Already have an account ?</p>\r\n     <a href=\"login.html\">sing-in</a>\r\n </div>\r\n"
+                },
+                {
+                    "date": 1765025860111,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,32 @@\n  Creat Account\r\n     </h2>\r\n     <p>Fields marked with (*) are required.</p>\r\n </div>\r\n-ٍّ\r\n+<form action=\"signup.php\" method=\"post\">\r\n+ \r\n+    <label for=\"name\">Username</label>\r\n+    <input type=\"text\" name=\"name\" id=\"name\" placeholder=\"Enter Your Name *\" required>\r\n+    \r\n+    <label for=\"email\">Email</label>\r\n+    <input type=\"email\" name=\"email\" id=\"email\" placeholder=\"Enter Your Email *\" required>\r\n+     \r\n+    <label for=\"pass\">Password</label>\r\n+    <input type=\"password\" name=\"pass\" id=\"pass\" placeholder=\"Enter Your Password *\" required>\r\n+   \r\n+    <label for=\"phone\">Your Phone</label>\r\n+    <input type=\"text\" name=\"phone\" id=\"phone\" placeholder=\"Enter Your Phone\">\r\n+\r\n+    <label for=\"role\">Role</label>\r\n+    <select name=\"role\" id=\"role\" required>\r\n+        <option value=\"\">Select Role</option>\r\n+        <option value=\"student\">Student</option>\r\n+        <option value=\"trainer\">Trainer</option>\r\n+    </select>\r\n+\r\n+    <input type=\"submit\" name=\"creat\" id=\"send\" value=\"Sign-up\">\r\n+</form>\r\n+\r\n <div class=\"sing-in\">\r\n     <p>Already have an account ?</p>\r\n     <a href=\"login.html\">sing-in</a>\r\n </div>\r\n"
+                },
+                {
+                    "date": 1765025908316,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,18 +36,23 @@\n    \r\n     <label for=\"phone\">Your Phone</label>\r\n     <input type=\"text\" name=\"phone\" id=\"phone\" placeholder=\"Enter Your Phone\">\r\n \r\n-    <label for=\"role\">Role</label>\r\n-    <select name=\"role\" id=\"role\" required>\r\n-        <option value=\"\">Select Role</option>\r\n-        <option value=\"student\">Student</option>\r\n-        <option value=\"trainer\">Trainer</option>\r\n-    </select>\r\n+    <label>Role</label>\r\n+    <div>\r\n+        <input type=\"radio\" name=\"role\" id=\"student\" value=\"student\" required>\r\n+        <label for=\"student\">Student</label>\r\n+    </div>\r\n \r\n+    <div>\r\n+        <input type=\"radio\" name=\"role\" id=\"trainer\" value=\"trainer\">\r\n+        <label for=\"trainer\">Trainer</label>\r\n+    </div>\r\n+\r\n     <input type=\"submit\" name=\"creat\" id=\"send\" value=\"Sign-up\">\r\n </form>\r\n \r\n+\r\n <div class=\"sing-in\">\r\n     <p>Already have an account ?</p>\r\n     <a href=\"login.html\">sing-in</a>\r\n </div>\r\n"
+                },
+                {
+                    "date": 1765026028413,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,18 +37,20 @@\n     <label for=\"phone\">Your Phone</label>\r\n     <input type=\"text\" name=\"phone\" id=\"phone\" placeholder=\"Enter Your Phone\">\r\n \r\n     <label>Role</label>\r\n+<div class=\"role-options\">\r\n     <div>\r\n         <input type=\"radio\" name=\"role\" id=\"student\" value=\"student\" required>\r\n         <label for=\"student\">Student</label>\r\n     </div>\r\n-\r\n     <div>\r\n         <input type=\"radio\" name=\"role\" id=\"trainer\" value=\"trainer\">\r\n         <label for=\"trainer\">Trainer</label>\r\n     </div>\r\n+</div>\r\n \r\n+\r\n     <input type=\"submit\" name=\"creat\" id=\"send\" value=\"Sign-up\">\r\n </form>\r\n \r\n \r\n"
+                }
+            ],
+            "date": 1765025180580,
+            "name": "Commit-0",
+            "content": "<!--sign-up.html-->\r\n\r\n<!DOCTYPE html>\r\n<html lang=\"fr\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <title> Formix / Log in</title>\r\n    <!-- font awsome -->\r\n<script src=\"https://kit.fontawesome.com/f14d152ebc.js\" crossorigin=\"anonymous\"></script>\r\n  <!-- google font -->\r\n      <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\r\n      <!-- font family -->\r\n<link rel=\"stylesheet\" href=\"../assets/css/normilze.css\">\r\n    <link rel=\"stylesheet\" href=\"../assets/css/pages/sign-up.css\">\r\n</head>\r\n<body>\r\n <div class=\"container\">\r\n    <div class=\"form\">\r\n<div class=\"text\">\r\n    <h2>\r\n Creat Account\r\n    </h2>\r\n    <p>Fields marked with (*) are required.</p>\r\n</div>\r\n<form action=\"\">\r\n \r\n    <label for=\"name\">Full Name</label>\r\n    <input type=\"text\" name=\"name\" id=\"name\" placeholder=\"Enter Your Name *\" required>\r\n    \r\n    <label for=\"email\">Email</label>\r\n    <input type=\"email\" name=\"email\" id=\"email\" placeholder=\"Enter Your Email *\" required>\r\n     \r\n    <label for=\"pass\">Password</label>\r\n  <input type=\"password\" name=\"pass\" id=\"email\" placeholder=\"Enter Your Password *\" required>\r\n   \r\n  <label for=\"phone\">Your Phone</label>\r\n     <input type=\"text\" placeholder=\"Enter Your Phone\">\r\n    \r\n     <input type=\"submit\" name=\"creat\" id=\"send\" value=\"Sign-up\">\r\n</form>\r\n<div class=\"sing-in\">\r\n    <p>Already have an account ?</p>\r\n    <a href=\"login.html\">sing-in</a>\r\n</div>\r\n</div>\r\n    <div class=\"img\">\r\n\r\n    </div>\r\n </div>   \r\n</body>\r\n</html>"
+        }
+    ]
+}

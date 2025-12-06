@@ -1,4 +1,5 @@
 <!--sign-up.html-->
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -22,22 +23,37 @@
     </h2>
     <p>Fields marked with (*) are required.</p>
 </div>
-<form action="">
+<form action="signup.php" method="post">
  
-    <label for="name">Full Name</label>
+    <label for="name">Username</label>
     <input type="text" name="name" id="name" placeholder="Enter Your Name *" required>
     
     <label for="email">Email</label>
     <input type="email" name="email" id="email" placeholder="Enter Your Email *" required>
      
     <label for="pass">Password</label>
-  <input type="password" name="pass" id="email" placeholder="Enter Your Password *" required>
+    <input type="password" name="pass" id="pass" placeholder="Enter Your Password *" required>
    
-  <label for="phone">Your Phone</label>
-     <input type="text" placeholder="Enter Your Phone">
-    
-     <input type="submit" name="creat" id="send" value="Sign-up">
+    <label for="phone">Your Phone</label>
+    <input type="text" name="phone" id="phone" placeholder="Enter Your Phone">
+
+    <label>Role</label>
+<div class="role-options">
+    <div>
+        <input type="radio" name="role" id="student" value="student" required>
+        <label for="student">Student</label>
+    </div>
+    <div>
+        <input type="radio" name="role" id="trainer" value="trainer">
+        <label for="trainer">Trainer</label>
+    </div>
+</div>
+
+
+    <input type="submit" name="creat" id="send" value="Sign-up">
 </form>
+
+
 <div class="sing-in">
     <p>Already have an account ?</p>
     <a href="login.html">sing-in</a>

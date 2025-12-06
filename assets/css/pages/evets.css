@@ -73,11 +73,8 @@ width: 230px;
   }
 }
 .side-bar .logo{
-color: var(--main-color);
-    font-size: 35px;
-    text-align: center;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 50px;
+width: 100%;
+    padding: 10px 20px 30px;
 }
 @media(max-width:767px){
 .side-bar .logo {

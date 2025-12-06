@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 1,
+            "activePatchIndex": 6,
             "patches": [
                 {
                     "date": 1764630112964,
@@ -12,6 +12,26 @@
                 {
                     "date": 1764630118633,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n     </style></head>\r\n <body>\r\n     <div class=\"courses\">\r\n         <aside class=\"side-bar\">\r\n-            <h3 class=\"logo\">  <img src=\"../assets/images/logo/sidebar.png\" alt=\"\" class=\"logo\"></h3>\r\n+            <img src=\"../assets/images/logo/sidebar.png\" alt=\"\" class=\"logo\">\r\n             <ul>\r\n                 <li>\r\n             <a  href=\"dashboard.html\">\r\n               <i class=\"fa-regular fa-chart-bar fa-fw\"></i>\r\n"
+                },
+                {
+                    "date": 1764933160742,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-<!--formation.html-->>\r\n+<!--formation.html-->\r\n <!DOCTYPE html>\r\n <html lang=\"en\">\r\n <head>\r\n     <meta charset=\"UTF-8\">\r\n@@ -23,8 +23,9 @@\n <body>\r\n     <div class=\"courses\">\r\n         <aside class=\"side-bar\">\r\n             <img src=\"../assets/images/logo/sidebar.png\" alt=\"\" class=\"logo\">\r\n+\r\n             <ul>\r\n                 <li>\r\n             <a  href=\"dashboard.html\">\r\n               <i class=\"fa-regular fa-chart-bar fa-fw\"></i>\r\n@@ -233,9 +234,9 @@\n   </div>\r\n </div>\r\n \r\n \r\n-<div class=\"box\">\r\n+<!-- <div class=\"box\">\r\n   <img src=\"../assets/images/courses/course05.png\" alt=\"\">\r\n   <div class=\"info\">\r\n     <h3 class=\"title\">Entrepreneurship & Business Innovation</h3>\r\n     <p>Turn your ideas into reality by learning the fundamentals of startup creation and innovation.</p>\r\n@@ -320,9 +321,9 @@\n \r\n     <div class=\"price\">18000DA</div>\r\n   </div>\r\n   </div>\r\n-</div>\r\n+</div> -->\r\n \r\n \r\n     <!-- </div>\r\n     <div class=\"number-pages\">\r\n"
+                },
+                {
+                    "date": 1764933167012,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -234,9 +234,9 @@\n   </div>\r\n </div>\r\n \r\n \r\n-<!-- <div class=\"box\">\r\n+ <div class=\"box\"> -->\r\n   <img src=\"../assets/images/courses/course05.png\" alt=\"\">\r\n   <div class=\"info\">\r\n     <h3 class=\"title\">Entrepreneurship & Business Innovation</h3>\r\n     <p>Turn your ideas into reality by learning the fundamentals of startup creation and innovation.</p>\r\n"
+                },
+                {
+                    "date": 1764933175196,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -234,9 +234,9 @@\n   </div>\r\n </div>\r\n \r\n \r\n- <div class=\"box\"> -->\r\n+ <div class=\"box\"> \r\n   <img src=\"../assets/images/courses/course05.png\" alt=\"\">\r\n   <div class=\"info\">\r\n     <h3 class=\"title\">Entrepreneurship & Business Innovation</h3>\r\n     <p>Turn your ideas into reality by learning the fundamentals of startup creation and innovation.</p>\r\n@@ -321,9 +321,9 @@\n \r\n     <div class=\"price\">18000DA</div>\r\n   </div>\r\n   </div>\r\n-</div> -->\r\n+</div> \r\n \r\n \r\n     <!-- </div>\r\n     <div class=\"number-pages\">\r\n"
+                },
+                {
+                    "date": 1764933181731,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -234,9 +234,9 @@\n   </div>\r\n </div>\r\n \r\n \r\n- <div class=\"box\"> \r\n+ <!-- <div class=\"box\"> \r\n   <img src=\"../assets/images/courses/course05.png\" alt=\"\">\r\n   <div class=\"info\">\r\n     <h3 class=\"title\">Entrepreneurship & Business Innovation</h3>\r\n     <p>Turn your ideas into reality by learning the fundamentals of startup creation and innovation.</p>\r\n@@ -260,12 +260,12 @@\n   </div>\r\n         <div class=\"price\">15000DA</div>\r\n     </div>\r\n   </div>\r\n-</div>\r\n+</div> -->\r\n \r\n \r\n-<div class=\"box \">\r\n+<!-- <div class=\"box \">\r\n   <img src=\"../assets/images/courses/course06.png\" alt=\"\">\r\n   <div class=\"info\">\r\n     <h3 class=\"title\">Personal Development and Productivity</h3>\r\n     <p>Learn how to manage your time, stay focused, and achieve your goals efficiently.</p>\r\n@@ -289,11 +289,11 @@\n       </div>\r\n         <div class=\"price\"> 5500DA</div>\r\n     </div>\r\n   </div>\r\n-</div>\r\n+</div> -->\r\n \r\n-<div class=\"box \">\r\n+<!-- <div class=\"box \">\r\n   <div class=\"image\">\r\n \r\n     <img src=\"../assets/images/courses/course02.png\" alt=\"\">\r\n   </div>\r\n@@ -321,9 +321,9 @@\n \r\n     <div class=\"price\">18000DA</div>\r\n   </div>\r\n   </div>\r\n-</div> \r\n+</div>  -->\r\n \r\n \r\n     <!-- </div>\r\n     <div class=\"number-pages\">\r\n"
+                },
+                {
+                    "date": 1764933189175,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -204,9 +204,9 @@\n       </div>\r\n   </div>\r\n </div>\r\n \r\n-\r\n+<!-- \r\n <div class=\"box \">\r\n   <img src=\"../assets/images/courses/course04.png\" alt=\"\">\r\n   <div class=\"info\">\r\n     <h3 class=\"title\">Public Speaking and Communication Skills</h3>\r\n@@ -231,9 +231,9 @@\n           <div class=\"price\">5000DA</div>\r\n       </div>\r\n   \r\n   </div>\r\n-</div>\r\n+</div> -->\r\n \r\n \r\n  <!-- <div class=\"box\"> \r\n   <img src=\"../assets/images/courses/course05.png\" alt=\"\">\r\n"
                 }
             ],
             "date": 1764630112964,

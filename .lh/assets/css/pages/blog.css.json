@@ -3,11 +3,15 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 1,
             "patches": [
                 {
                     "date": 1764630566395,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1765060542933,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -88,12 +88,9 @@\n .side-bar ul li{\r\n     padding: 20px;\r\n     border-bottom: 1px solid #eee;\r\n     transition: var(--main-transition-duration);\r\n-    -webkit-transition:;\r\n-    -moz-transition:;\r\n-    -ms-transition:;\r\n-    -o-transition:;\r\n+  \r\n }\r\n .side-bar ul li:hover{\r\n   background-color: var(--main-color);\r\n }\r\n"
                 }
             ],
             "date": 1764630566395,

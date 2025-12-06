@@ -1056,7 +1056,7 @@ line-height: 2;
 }
 
 
-footer .box .link3 li{
+footer .box .link3 ul li{
   padding: 15px 0;
   transition: var(--main-transition-duration);
   

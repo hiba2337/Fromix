@@ -3,11 +3,59 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 12,
             "patches": [
                 {
                     "date": 1764630668318,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1764933310839,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,12 @@\n </head>\r\n <body>\r\n     <div class=\"blog\">\r\n         <div class=\"side-bar\">\r\n+\r\n            <img src=\"../assets/images/logo/sidebar.png\" alt=\"\" class=\"logo\">\r\n+\r\n+\r\n             <ul>\r\n                 <li>\r\n             <a  href=\"dashboard.html\">\r\n               <i class=\"fa-regular fa-chart-bar fa-fw\"></i>\r\n@@ -143,9 +146,9 @@\n      </div>\r\n    </div> \r\n    \r\n       <!-- Blog Card 4 -->\r\n-   <div class=\"blog-card\">\r\n+   <!-- <div class=\"blog-card\">\r\n         <img src=\"../assets/images/blog/blog04.png\" alt=\"Blog Image\">\r\n         <div class=\"card-content\">\r\n           <h3>Finding Peace in Nature: Why Spending Time Outdoors Boosts Mental Health</h3>\r\n        \r\n@@ -155,9 +158,9 @@\n             </a>\r\n \r\n          \r\n         </div>\r\n-      </div> \r\n+      </div>  -->\r\n \r\n       <!-- Blog Card 5 -->\r\n       <div class=\"blog-card\">\r\n         <img src=\"../assets/images/blog/blog05.png\" alt=\"Blog Image\">\r\n"
+                },
+                {
+                    "date": 1764933318208,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -158,9 +158,9 @@\n             </a>\r\n \r\n          \r\n         </div>\r\n-      </div>  -->\r\n+      </div>\r\n \r\n       <!-- Blog Card 5 -->\r\n       <div class=\"blog-card\">\r\n         <img src=\"../assets/images/blog/blog05.png\" alt=\"Blog Image\">\r\n"
+                },
+                {
+                    "date": 1764933325469,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -146,16 +146,16 @@\n      </div>\r\n    </div> \r\n    \r\n       <!-- Blog Card 4 -->\r\n-   <!-- <div class=\"blog-card\">\r\n+   <div class=\"blog-card\">\r\n         <img src=\"../assets/images/blog/blog04.png\" alt=\"Blog Image\">\r\n         <div class=\"card-content\">\r\n           <h3>Finding Peace in Nature: Why Spending Time Outdoors Boosts Mental Health</h3>\r\n        \r\n             <a href=\"#\" class=\"btn\">Learn More\r\n \r\n-              <!-- <i class=\"fa-solid fa-arrow-up-right\"></i> -->\r\n+              <i class=\"fa-solid fa-arrow-up-right\"></i> -->\r\n             </a>\r\n \r\n          \r\n         </div>\r\n"
+                },
+                {
+                    "date": 1764933332437,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -167,9 +167,8 @@\n         <div class=\"card-content\">\r\n           <h3>Mastering the Art of Teamwork: Communication Tips for Successful Projects</h3>\r\n        \r\n             <a href=\"#\" class=\"btn\">Learn More\r\n-                        <!-- <i class=\"fa-solid fa-arrow-up-right\"></i> -->\r\n             </a>\r\n       \r\n \r\n        \r\n"
+                },
+                {
+                    "date": 1764933338800,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -161,15 +161,15 @@\n         </div>\r\n       </div>\r\n \r\n       <!-- Blog Card 5 -->\r\n-      <div class=\"blog-card\">\r\n+      <!-- <div class=\"blog-card\">\r\n         <img src=\"../assets/images/blog/blog05.png\" alt=\"Blog Image\">\r\n         <div class=\"card-content\">\r\n           <h3>Mastering the Art of Teamwork: Communication Tips for Successful Projects</h3>\r\n        \r\n             <a href=\"#\" class=\"btn\">Learn More\r\n-            </a>\r\n+            </a> -->\r\n       \r\n \r\n        \r\n         </div>\r\n@@ -181,9 +181,8 @@\n         <div class=\"card-content\">\r\n           <h3>Balancing Life and Study: How to Stay Productive Without Burning Out</h3>\r\n  \r\n             <a href=\"#\" class=\"btn\">Learn More\r\n-                        <!-- <i class=\"fa-solid fa-arrow-up-right\"></i> -->\r\n             </a>\r\n           \r\n \r\n          \r\n"
+                },
+                {
+                    "date": 1764933344933,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -175,15 +175,15 @@\n         </div>\r\n       </div> \r\n \r\n       <!-- Blog Card 6 -->\r\n-     <div class=\"blog-card\">\r\n+     <!-- <div class=\"blog-card\">\r\n         <img src=\"../assets/images/blog/blog06.png\" alt=\"Blog Image\">\r\n         <div class=\"card-content\">\r\n           <h3>Balancing Life and Study: How to Stay Productive Without Burning Out</h3>\r\n  \r\n             <a href=\"#\" class=\"btn\">Learn More\r\n-            </a>\r\n+            </a> -->\r\n           \r\n \r\n          \r\n         </div>\r\n@@ -195,9 +195,8 @@\n         <div class=\"card-content\">\r\n           <h3>Digital Minimalism: How to Take Control of Your Time and Focus Better</h3>\r\n      \r\n             <a href=\"#\" class=\"btn\">Learn More \r\n-                        <!-- <i class=\"fa-solid fa-arrow-up-right\"></i> -->\r\n             </a>\r\n           \r\n \r\n          \r\n"
+                },
+                {
+                    "date": 1764933356466,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -189,15 +189,15 @@\n         </div>\r\n       </div> \r\n \r\n       <!-- Blog Card 7 -->\r\n-       <div class=\"blog-card\">\r\n+       <!-- <div class=\"blog-card\">\r\n         <img src=\"../assets/images/blog/blog07.png\" alt=\"Blog Image\">\r\n         <div class=\"card-content\">\r\n           <h3>Digital Minimalism: How to Take Control of Your Time and Focus Better</h3>\r\n      \r\n             <a href=\"#\" class=\"btn\">Learn More \r\n-            </a>\r\n+            </a> \r\n           \r\n \r\n          \r\n         </div>\r\n@@ -209,9 +209,8 @@\n         <div class=\"card-content\">\r\n           <h3>Healthy Morning Routines to Start Your Day with Energy and Positivity</h3>\r\n           \r\n             <a href=\"#\" class=\"btn\">Learn More\r\n-                        <!-- <i class=\"fa-solid fa-arrow-up-right\"></i> -->\r\n             </a>\r\n            \r\n          \r\n         </div>\r\n"
+                },
+                {
+                    "date": 1764933363054,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -200,12 +200,12 @@\n           \r\n \r\n          \r\n         </div>\r\n-      </div>\r\n+      </div>-->\r\n       \r\n       <!-- Blog Card 8 -->\r\n-     <div class=\"blog-card\">\r\n+     <!-- <div class=\"blog-card\">\r\n         <img src=\"../assets\\images\\blog\\blog08.png\" alt=\"Blog Image\">\r\n         <div class=\"card-content\">\r\n           <h3>Healthy Morning Routines to Start Your Day with Energy and Positivity</h3>\r\n           \r\n@@ -213,9 +213,9 @@\n             </a>\r\n            \r\n          \r\n         </div>\r\n-      </div>\r\n+      </div> -->\r\n \r\n       <!-- Blog Card 9 -->\r\n     <div class=\"blog-card\">\r\n         <img src=\"../assets/images/blog/blog09.png\" alt=\"Blog Image\">\r\n"
+                },
+                {
+                    "date": 1764933370161,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -216,23 +216,22 @@\n         </div>\r\n       </div> -->\r\n \r\n       <!-- Blog Card 9 -->\r\n-    <div class=\"blog-card\">\r\n+    <!-- <div class=\"blog-card\">\r\n         <img src=\"../assets/images/blog/blog09.png\" alt=\"Blog Image\">\r\n         <div class=\"card-content\">\r\n           <h3>How Creativity Shapes Success: Building a Mindset of Innovation</h3>\r\n         \r\n             <a href=\"#\" class=\"btn\">Learn More\r\n-                    <!-- <i class=\"fa-solid fa-arrow-up-right\"></i> -->\r\n             </a>\r\n          \r\n \r\n          \r\n         </div>\r\n \r\n   </div> \r\n- \r\n+  -->\r\n   \r\n       \r\n </div>\r\n <!-- end content -->\r\n"
+                },
+                {
+                    "date": 1764933380561,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -175,9 +175,9 @@\n         </div>\r\n       </div> \r\n \r\n       <!-- Blog Card 6 -->\r\n-     <!-- <div class=\"blog-card\">\r\n+     <!- <div class=\"blog-card\">\r\n         <img src=\"../assets/images/blog/blog06.png\" alt=\"Blog Image\">\r\n         <div class=\"card-content\">\r\n           <h3>Balancing Life and Study: How to Stay Productive Without Burning Out</h3>\r\n  \r\n"
+                },
+                {
+                    "date": 1764933391926,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -175,20 +175,20 @@\n         </div>\r\n       </div> \r\n \r\n       <!-- Blog Card 6 -->\r\n-     <!- <div class=\"blog-card\">\r\n+      <!-- <div class=\"blog-card\">\r\n         <img src=\"../assets/images/blog/blog06.png\" alt=\"Blog Image\">\r\n         <div class=\"card-content\">\r\n           <h3>Balancing Life and Study: How to Stay Productive Without Burning Out</h3>\r\n  \r\n             <a href=\"#\" class=\"btn\">Learn More\r\n-            </a> -->\r\n+            </a> \r\n           \r\n \r\n          \r\n         </div>\r\n-      </div> \r\n+      </div>  -->\r\n \r\n       <!-- Blog Card 7 -->\r\n        <!-- <div class=\"blog-card\">\r\n         <img src=\"../assets/images/blog/blog07.png\" alt=\"Blog Image\">\r\n"
+                },
+                {
+                    "date": 1764933401905,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -161,20 +161,20 @@\n         </div>\r\n       </div>\r\n \r\n       <!-- Blog Card 5 -->\r\n-      <!-- <div class=\"blog-card\">\r\n+       <!-- <div class=\"blog-card\">\r\n         <img src=\"../assets/images/blog/blog05.png\" alt=\"Blog Image\">\r\n         <div class=\"card-content\">\r\n           <h3>Mastering the Art of Teamwork: Communication Tips for Successful Projects</h3>\r\n        \r\n             <a href=\"#\" class=\"btn\">Learn More\r\n-            </a> -->\r\n+            </a> \r\n       \r\n \r\n        \r\n         </div>\r\n-      </div> \r\n+      </div>  -->\r\n \r\n       <!-- Blog Card 6 -->\r\n       <!-- <div class=\"blog-card\">\r\n         <img src=\"../assets/images/blog/blog06.png\" alt=\"Blog Image\">\r\n"
                 }
             ],
             "date": 1764630668318,

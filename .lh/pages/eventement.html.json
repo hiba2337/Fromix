@@ -3,11 +3,19 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 2,
             "patches": [
                 {
                     "date": 1764630671737,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1764933267599,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,12 @@\n </head>\r\n <body>\r\n    <div class=\"events\">\r\n       <aside class=\"side-bar\">\r\n+\r\n            <img src=\"../assets/images/logo/sidebar.png\" alt=\"\" class=\"logo\">\r\n+\r\n+\r\n             <ul>\r\n                 <li>\r\n             <a  href=\"dashboard.html\">\r\n               <i class=\"fa-regular fa-chart-bar fa-fw\"></i>\r\n@@ -181,9 +184,9 @@\n                        <a href=\"#\" class=\"btn-register\">Register Now</a>\r\n                  </div>\r\n              </div> \r\n              <!-- card 4 -->\r\n-         <div class=\"card-event\">\r\n+         <!-- <div class=\"card-event\">\r\n            <div class=\"image\">\r\n             \r\n              <img src=\"../assets/images/events/event04.png\" alt=\"AI\">\r\n              <span class=\"date\">10 Nov</span>\r\n@@ -204,9 +207,9 @@\n                        </div>\r\n                         <p>Discover how AI is transforming industries and daily life.</p>\r\n                         <a href=\"#\" class=\"btn-register\">Register Now</a>\r\n                  </div>\r\n-             </div> \r\n+             </div>  -->\r\n              <!-- card 5 -->\r\n          <div class=\"card-event\">\r\n            <div class=\"image\">\r\n             \r\n"
+                },
+                {
+                    "date": 1764933273697,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -209,9 +209,9 @@\n                         <a href=\"#\" class=\"btn-register\">Register Now</a>\r\n                  </div>\r\n              </div>  -->\r\n              <!-- card 5 -->\r\n-         <div class=\"card-event\">\r\n+         <!-- <div class=\"card-event\">\r\n            <div class=\"image\">\r\n             \r\n              <img src=\"../assets/images/events/event05.png\" alt=\"Languages\">\r\n              <span class=\"date\">12 Nov</span>\r\n@@ -234,11 +234,11 @@\n                        <p>Improve your fluency and confidence in English communication.</p>\r\n      \r\n                        <a href=\"#\" class=\"btn-register\">Register Now</a>\r\n                  </div>\r\n-             </div> \r\n+             </div>  -->\r\n              <!-- card 6 -->\r\n-         <div class=\"card-event\">\r\n+         <!-- <div class=\"card-event\">\r\n            <div class=\"image\">\r\n             \r\n              <img src=\"../assets/images/events/event06.png\" alt=\"Web Dev\">\r\n              <span class=\"date\">15 Nov</span>\r\n@@ -261,11 +261,11 @@\n                        <p>Learn HTML, CSS, and JavaScript by building real projects.</p>\r\n      \r\n                        <a href=\"#\"class=\"btn-register\">Register Now</a>\r\n                  </div>\r\n-             </div> \r\n+             </div>  -->\r\n              <!-- card 7 -->\r\n-         <div class=\"card-event\">\r\n+         <!-- <div class=\"card-event\">\r\n           \r\n         <div class=\"image\">\r\n \r\n            <img src=\"../assets/images/events/event07.png\" alt=\"Cybersecurity\"> \r\n@@ -290,9 +290,9 @@\n      \r\n      \r\n                             <a href=\"#\" class=\"btn-register\">Register Now</a>\r\n                  </div>\r\n-             </div> \r\n+             </div>  -->\r\n              <!-- card 8 -->\r\n          <div class=\"card-event\">\r\n            <div class=\"image\">\r\n           \r\n"
                 }
             ],
             "date": 1764630671737,
