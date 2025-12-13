@@ -1,0 +1,42 @@
+{
+    "sourceFile": "index.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 6,
+            "patches": [
+                {
+                    "date": 1765633091184,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1765633103633,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,7 +3,10 @@\n \n require_once \"phpqrcode/qrlib.php\";\n $path ='images/';\n $qrcode = $path.time().\".png\";\n+\n+\n+\n QRcode::png(\"Tech Area\", $qrcode);\n echo \"<img src ='\"$qrcode.\"'>\";\n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765633177114,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,6 +7,6 @@\n \n \n \n QRcode::png(\"Tech Area\", $qrcode);\n-echo \"<img src ='\"$qrcode.\"'>\";\n+echo \"<img src ='\".\"'>\";\n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765633231292,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,11 +2,15 @@\n <?php\n \n require_once \"phpqrcode/qrlib.php\";\n $path ='images/';\n-$qrcode = $path.time().\".png\";\n+$qrcode = $path . time() . \".png\";\n \n+// إنشاء صورة QR code\n+QRcode::png(\"Tech Area\", $qrcode);\n \n+// عرض الصورة بشكل صحيح\n\\ No newline at end of file\n+echo \"<img src='\" . $qrcode . \"'>\";   // الطريقة 1: الربط بالنقطة\n+// أو يمكن كتابتها هكذا:\n+// echo \"<img src='$qrcode'>\";       // الطريقة 2: استخدام علامات اقتباس مزدوجة\n \n-QRcode::png(\"Tech Area\", $qrcode);\n-echo \"<img src ='\".\"'>\";\n-?>\n+?>\n"
+                },
+                {
+                    "date": 1765633238172,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,13 +4,13 @@\n require_once \"phpqrcode/qrlib.php\";\n $path ='images/';\n $qrcode = $path . time() . \".png\";\n \n-// إنشاء صورة QR code\n+\n QRcode::png(\"Tech Area\", $qrcode);\n \n-// عرض الصورة بشكل صحيح\n+\n echo \"<img src='\" . $qrcode . \"'>\";   // الطريقة 1: الربط بالنقطة\n // أو يمكن كتابتها هكذا:\n // echo \"<img src='$qrcode'>\";       // الطريقة 2: استخدام علامات اقتباس مزدوجة\n\\ No newline at end of file\n \n-?>\n+?>\n"
+                },
+                {
+                    "date": 1765633363299,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,7 @@\n \n QRcode::png(\"Tech Area\", $qrcode);\n \n \n-echo \"<img src='\" . $qrcode . \"'>\";   // الطريقة 1: الربط بالنقطة\n-// أو يمكن كتابتها هكذا:\n-// echo \"<img src='$qrcode'>\";       // الطريقة 2: استخدام علامات اقتباس مزدوجة\n+echo \"<img src='\" . $qrcode . \"'>\"; \n \n\\ No newline at end of file\n-?>\n+?>\n"
+                },
+                {
+                    "date": 1765633436216,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,7 +8,8 @@\n \n QRcode::png(\"Tech Area\", $qrcode);\n \n \n-echo \"<img src='\" . $qrcode . \"'>\"; \n+echo \"<img src='\" . $qrcode . \"'>\";   // الطريقة 1: الربط بالنقطة\n \n\\ No newline at end of file\n-?>\n+\n+?>\n"
+                }
+            ],
+            "date": 1765633091183,
+            "name": "Commit-0",
+            "content": "\n<?php\n\nrequire_once \"phpqrcode/qrlib.php\";\n$path ='images/';\n$qrcode = $path.time().\".png\";\nQRcode::png(\"Tech Area\", $qrcode);\necho \"<img src ='\"$qrcode.\"'>\";\n?>"
+        }
+    ]
+}

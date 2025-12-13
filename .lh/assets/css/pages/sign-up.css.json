@@ -1,0 +1,34 @@
+{
+    "sourceFile": "assets/css/pages/sign-up.css",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 4,
+            "patches": [
+                {
+                    "date": 1765026037585,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1765026060691,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -183,9 +183,9 @@\n }\r\n }\r\n .role-options {\r\n     display: flex;\r\n-    gap: 20px; /* المسافة بين الخيارين */\r\n+    gap: 40px; /* المسافة بين الخيارين */\r\n     margin-bottom: 10px;\r\n     align-items: center;\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1765026167225,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -183,17 +183,17 @@\n }\r\n }\r\n .role-options {\r\n     display: flex;\r\n-    gap: 40px; /* المسافة بين الخيارين */\r\n+    gap: 40px; \r\n     margin-bottom: 10px;\r\n     align-items: center;\r\n }\r\n \r\n .role-options div {\r\n     display: flex;\r\n     align-items: center;\r\n-    gap: 5px; /* المسافة بين الـ radio واسم الخيار */\r\n+    gap: 5px;\r\n }\r\n \r\n .role-options input[type=\"radio\"] {\r\n     accent-color: var(--main-color); /* يعطي لون متناسق مع التصميم */\r\n"
+                },
+                {
+                    "date": 1765026174971,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -191,9 +191,9 @@\n \r\n .role-options div {\r\n     display: flex;\r\n     align-items: center;\r\n-    gap: 5px;\r\n+    gap: 14px;\r\n }\r\n \r\n .role-options input[type=\"radio\"] {\r\n     accent-color: var(--main-color); /* يعطي لون متناسق مع التصميم */\r\n"
+                },
+                {
+                    "date": 1765026180736,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -195,9 +195,9 @@\n     gap: 14px;\r\n }\r\n \r\n .role-options input[type=\"radio\"] {\r\n-    accent-color: var(--main-color); /* يعطي لون متناسق مع التصميم */\r\n+    accent-color: var(--main-color); \r\n     width: 18px;\r\n     height: 18px;\r\n }\r\n \r\n"
+                }
+            ],
+            "date": 1765026037585,
+            "name": "Commit-0",
+            "content": "\r\n* {\r\n  box-sizing: border-box;\r\n  margin: 0;\r\n  padding: 0;\r\n      font-family: \"Work Sans\", sans-serif;\r\n\r\n}\r\n:root {\r\n  --main-color: #0075FF;\r\n  --section-color: #F7F8FA;\r\n  --font-color: #223A58;\r\n  --main-transition-duration: 0.3s; \r\n \r\n}\r\n\r\nbody {\r\n  background-color: var(--section-color);\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  min-height: 100vh;\r\n        font-family: \"Work Sans\", sans-serif;\r\n\r\n}\r\n::-webkit-scrollbar {\r\n  width: 15px;\r\n}\r\n::-webkit-scrollbar-track {\r\n  background-color: white;\r\n}\r\n::-webkit-scrollbar-thumb {\r\n  background-color: var(--main-color);\r\n}\r\n::-webkit-scrollbar-thumb:hover {\r\n  background-color: var(--main-color);\r\n}\r\n\r\n\r\n.container {\r\n  display: flex;\r\n  width: 800px;\r\n  background-color: white;\r\n  border-radius: 10px;\r\n  overflow: hidden;\r\n  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);\r\n  animation: slideIn 0.9s ease; \r\n  \r\n}\r\n\r\n\r\n@media(max-width:767px){\r\n.container{\r\n  flex-direction: column;\r\n  width: 100%;\r\n  height: 100vh;\r\n}\r\n}\r\n\r\n\r\n@keyframes slideIn {\r\n  0% {\r\n    opacity: 0;\r\n    transform: translateX(-80px);\r\n}\r\n  100% {\r\n    opacity: 1;\r\n    transform: translateX(0);\r\n  }\r\n}\r\n\r\n\r\n.form {\r\n    flex: 1;\r\n    padding: 23px 50px;\r\n\r\n}\r\n\r\n@media(max-width:767px){\r\n.form{\r\norder: 2;\r\n\r\n}\r\n}\r\n\r\n\r\n.form .text{\r\n      margin-bottom: 36px;\r\n\r\n}\r\n.text h2 {\r\n font-size: 28px;\r\n    margin-bottom: 8px;\r\n    text-align: center;\r\n}\r\n@media(max-width:767px){\r\n  .text h2{\r\n    font-size: 33px;\r\n  }\r\n}\r\n.text p {\r\ncolor: #777;\r\n    margin-bottom: 20px;\r\n    text-align: center;\r\n    font-size: 11px;\r\n}\r\n@media(max-width:767px){\r\n  .text p{\r\n    font-size: 16px;\r\n  }\r\n}\r\n\r\nlabel {\r\n    display: block;\r\n    margin-bottom: 10px;\r\n    font-weight: 500;\r\n}\r\n\r\n\r\ninput{\r\n width: 100%;\r\n    padding: 12px 12px;\r\n    margin-bottom: 10px;\r\n    border: 1px solid #ccc;\r\n    border-radius: 12px;\r\n    font-size: 14px;\r\n    transition: border-color 0.3s;\r\n}\r\n\r\ninput:focus {\r\n  outline: none;\r\n  border-color: var(--main-color);\r\n}\r\n\r\n#send {\r\n    width: 100%;\r\n    background: linear-gradient(to right, var(--main-color), #0048C1);\r\n    color: white;\r\n    padding: 10px;\r\n    border: none;\r\n    border-radius: 12px;\r\n    font-weight: 600;\r\n    cursor: pointer;\r\n    font-size: 19px;\r\n    transition: var(--main-transition-duration);\r\n    margin-top: 12px;\r\n\r\n}\r\n\r\n#send:hover {\r\n  background: linear-gradient(to right, #0048C1, var(--main-color));\r\n  transform: scale(1.02);\r\n}\r\n\r\n.sing-in {\r\nmargin-top: 10px;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    gap: 10px;\r\n}\r\n.sing-in p{\r\ncolor: #777;\r\n   \r\n}\r\n\r\n.sing-in a {\r\n  color: var(--main-color);\r\n  text-decoration: none;\r\n  font-weight: 500;\r\n}\r\n\r\n\r\n.img {\r\n  flex: 1;\r\n    padding: 50px 50px;\r\n  background: linear-gradient(135deg, var(--main-color), #0048C1);\r\n}\r\n@media(max-width:767px){\r\n.img{\r\norder: 1;\r\n\r\n}\r\n}\r\n.role-options {\r\n    display: flex;\r\n    gap: 20px; /* المسافة بين الخيارين */\r\n    margin-bottom: 10px;\r\n    align-items: center;\r\n}\r\n\r\n.role-options div {\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 5px; /* المسافة بين الـ radio واسم الخيار */\r\n}\r\n\r\n.role-options input[type=\"radio\"] {\r\n    accent-color: var(--main-color); /* يعطي لون متناسق مع التصميم */\r\n    width: 18px;\r\n    height: 18px;\r\n}\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n"
+        }
+    ]
+}

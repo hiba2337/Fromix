@@ -1,0 +1,18 @@
+{
+    "sourceFile": "pages/paiement.html",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1764629082497,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1764629082497,
+            "name": "Commit-0",
+            "content": "<!--paiement.html-->\r\n<!DOCTYPE html>\r\n<html lang=\"fr\">\r\n<head>\r\n  <meta charset=\"UTF-8\">\r\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n  <!-- font awsome -->\r\n  <script src=\"https://kit.fontawesome.com/f14d152ebc.js\" crossorigin=\"anonymous\"></script>\r\n  <!-- google font -->\r\n  <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\r\n  <!-- font family -->\r\n  <link href=\"https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap\" rel=\"stylesheet\">\r\n\r\n  <!-- style -->\r\n\r\n  <link rel=\"stylesheet\" href=\"css/paiement.css\">\r\n=======\r\n  <link rel=\"stylesheet\" href=\"../assets/css/pages/paiement.css\">  \r\n\r\n\r\n  <title>Formix | Paiement</title>\r\n</head>\r\n<body>\r\n\r\n <div class=\"payment-container\">\r\n  <h2>Payment by Bank Transfer</h2>\r\n\r\n  <div class=\"bank-section\">\r\n    <h3>🔹Recipient Bank Information</h3>\r\n    <p><i class=\"fas fa-university\"></i><strong>Bank:</strong> National Bank of Algeria</p>\r\n    <p><i class=\"fas fa-credit-card\"></i><strong>Account Number:</strong> 123 456 789 001</p>\r\n    <p><i class=\"fas fa-user\"></i><strong>Account Holder:</strong> Hiba Kherroubi</p>\r\n    <p><i class=\"fas fa-hashtag\"></i><strong>IBAN:</strong> DZ123456789000000</p>\r\n  </div>\r\n\r\n  <div class=\"separator\"></div>\r\n\r\n  <div class=\"form-section\">\r\n    <h3>Sender Information</h3>\r\n\r\n    <form id=\"paymentForm\">\r\n      <div class=\"input-group\">\r\n        <label for=\"name\">Full Name</label>\r\n        <i class=\"fas fa-user\"></i>\r\n        <input type=\"text\" id=\"name\" name=\"name\" placeholder=\"Enter your full name\" required>\r\n      </div>\r\n\r\n      <div class=\"input-group\">\r\n        <label for=\"email\">Email Address</label>\r\n        <i class=\"fas fa-envelope\"></i>\r\n        <input type=\"email\" id=\"email\" name=\"email\" placeholder=\"example@email.com\" required>\r\n      </div>\r\n\r\n      <div class=\"input-group\">\r\n        <label for=\"amount\">Transferred Amount (DA)</label>\r\n        <i class=\"fas fa-dollar-sign\"></i>\r\n        <input type=\"number\" id=\"amount\" name=\"amount\" placeholder=\"Ex: 2500\" required>\r\n      </div>\r\n\r\n      <div class=\"input-group\">\r\n        <label for=\"receipt\">Upload Transfer Receipt</label>\r\n        <input type=\"file\" id=\"receipt\" name=\"receipt\" accept=\"image/*,.pdf\" required>\r\n      </div>\r\n\r\n      <button type=\"submit\">Submit</button>\r\n\r\n      <p class=\"note\">Please attach the receipt to validate your payment.</p>\r\n    </form>\r\n  </div>\r\n</div>\r\n\r\n<div class=\"popup\" id=\"popup\">\r\n  <div class=\"popup-content\">\r\n    <h3>🎉 Payment Sent</h3>\r\n    <p>Thank you! Your payment request has been successfully submitted.</p>\r\n    <button id=\"closePopup\">Close</button>\r\n  </div>\r\n</div>\r\n\r\n</body>\r\n</html>"
+        }
+    ]
+}

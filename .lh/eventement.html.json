@@ -1,0 +1,62 @@
+{
+    "sourceFile": "eventement.html",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 11,
+            "patches": [
+                {
+                    "date": 1761486940546,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1761486963315,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,7 +11,7 @@\n <link href=\"https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap\" rel=\"stylesheet\">\n     <title>Formix / Events</title>\n </head>\n <body>\n-    \n+   div.e \n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1761486968691,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,7 +11,64 @@\n <link href=\"https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap\" rel=\"stylesheet\">\n     <title>Formix / Events</title>\n </head>\n <body>\n-   div.e \n+   <div class=\"events\">\n+      <div class=\"side-bare\">\n+            <h3 class=\"logo\">Formix</h3>\n+            <ul>\n+                <li>\n+            <a  href=\"dashboard.html\">\n+              <i class=\"fa-regular fa-chart-bar fa-fw\"></i>\n+              <span>Dashboard</span>\n+            </a>\n+                <li>\n+            <a  href=\"formation.html\">\n+              <i class=\"fa-solid fa-graduation-cap fa-fw\"></i>\n+              <span>Courses</span>\n+            </a>\n+          </li>\n+                <li>\n+                       <a  href=\"eventement.html\">\n+             <i class=\"fa-solid fa-calendar-days\"></i>\n+              <span>Events</span>\n+            </a>\n+                </li>\n+                <li>\n+                       <a  href=\"panier.html\">\n+            <i class=\"fa-solid fa-cart-shopping\"></i>\n+              <span>Cart</span>\n+            </a>\n+                </li>\n+                <li>\n+                       <a  href=\"Blog.html\">\n+           <i class=\"fa-solid fa-pen-nib\"></i>\n+\n+              <span>Cart</span>\n+            </a>\n+                </li>\n+               \n+                <li>\n+                       <a  href=\"contact.html\">\n+        <i class=\"fa-solid fa-phone\"></i>\n+\n+\n+              <span>Contact</span>\n+            </a>\n+                </li>\n+               \n+                <li>\n+                       <a  href=\"index.html\">\n+<i class=\"fa-solid fa-right-from-bracket\"></i>\n+\n+\n+\n+              <span>Log Out</span>\n+            </a>\n+                </li>\n+               \n+                \n+            </ul>\n+        </div>\n+   </div> \n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1761486988164,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,6 +69,7 @@\n                 \n             </ul>\n         </div>\n    </div> \n+   div;\n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1761486997195,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,7 +69,7 @@\n                 \n             </ul>\n         </div>\n    </div> \n-   div;\n+   <div class=\"event-contnet\"></div>\n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1761487004238,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,7 +69,9 @@\n                 \n             </ul>\n         </div>\n    </div> \n-   <div class=\"event-contnet\"></div>\n+   <div class=\"event-content\">\n+    \n+   </div>\n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1761487012466,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -70,8 +70,10 @@\n             </ul>\n         </div>\n    </div> \n    <div class=\"event-content\">\n-    \n+    <div class=\"boxs\">\n+        div.\n+    </div>\n    </div>\n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1761487018904,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -71,9 +71,11 @@\n         </div>\n    </div> \n    <div class=\"event-content\">\n     <div class=\"boxs\">\n-        div.\n+        <div class=\"card-event\">\n+            \n+        </div>\n     </div>\n    </div>\n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1761487025258,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -72,9 +72,9 @@\n    </div> \n    <div class=\"event-content\">\n     <div class=\"boxs\">\n         <div class=\"card-event\">\n-            \n+            <img src=\"img\" alt=\"\">\n         </div>\n     </div>\n    </div>\n </body>\n"
+                },
+                {
+                    "date": 1761487036485,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -72,9 +72,9 @@\n    </div> \n    <div class=\"event-content\">\n     <div class=\"boxs\">\n         <div class=\"card-event\">\n-            <img src=\"img\" alt=\"\">\n+            <img src=\"image/pexels-armin-rimoldi-5553045.jpg\" alt=\"\">\n         </div>\n     </div>\n    </div>\n </body>\n"
+                },
+                {
+                    "date": 1761487533284,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -73,9 +73,9 @@\n    <div class=\"event-content\">\n     <div class=\"boxs\">\n         <div class=\"card-event\">\n             <img src=\"image/pexels-armin-rimoldi-5553045.jpg\" alt=\"\">\n-            \n+            <div class=\"date\"></div>\n         </div>\n     </div>\n    </div>\n </body>\n"
+                },
+                {
+                    "date": 1761487606887,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,9 +75,9 @@\n         <div class=\"card-event\">\n             <img src=\"image/pexels-armin-rimoldi-5553045.jpg\" alt=\"\">\n             <div class=\"date\">30 oct</div>\n             <div class=\"info\">\n-                \n+                h\n             </div>\n         </div>\n     </div>\n    </div>\n"
+                }
+            ],
+            "date": 1761486940546,
+            "name": "Commit-0",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n <!-- font awsome -->\n<script src=\"https://kit.fontawesome.com/f14d152ebc.js\" crossorigin=\"anonymous\"></script>\n  <!-- google font -->\n      <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n      <!-- font family -->\n<link href=\"https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap\" rel=\"stylesheet\">\n    <title>Formix / Events</title>\n</head>\n<body>\n    \n</body>\n</html>"
+        }
+    ]
+}

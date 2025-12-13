@@ -1,0 +1,34 @@
+{
+    "sourceFile": "pages/login.html",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 4,
+            "patches": [
+                {
+                    "date": 1765147167536,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1765147310691,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-<!--login.html-->\r\n+<!--login.html-->>\r\n <!DOCTYPE html>\r\n <html lang=\"en\">\r\n <head>\r\n     <meta charset=\"UTF-8\">\r\n"
+                },
+                {
+                    "date": 1765147316235,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-<!--login.html-->>\r\n+<!--login.html-->\r\n <!DOCTYPE html>\r\n <html lang=\"en\">\r\n <head>\r\n     <meta charset=\"UTF-8\">\r\n"
+                },
+                {
+                    "date": 1765312470187,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n WELCOME BACK\r\n     </h2>\r\n     <p>welcome back ! please inter your details</p>\r\n     </div>\r\n-   <form action=\"log\">\r\n+   <form action=\"login.php\">\r\n     \r\n         <label for=\"email\">Email</label>\r\n         <input type=\"email\" name=\"email\" id=\"email\" placeholder=\"Enter Your Email\">\r\n     \r\n"
+                },
+                {
+                    "date": 1765312470874,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n WELCOME BACK\r\n     </h2>\r\n     <p>welcome back ! please inter your details</p>\r\n     </div>\r\n-   <form action=\"login.php\">\r\n+   <form action=\"login.php\" me>\r\n     \r\n         <label for=\"email\">Email</label>\r\n         <input type=\"email\" name=\"email\" id=\"email\" placeholder=\"Enter Your Email\">\r\n     \r\n"
+                }
+            ],
+            "date": 1765147167536,
+            "name": "Commit-0",
+            "content": "<!--login.html-->\r\n<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n \r\n   <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n     <!-- font awsome -->\r\n<script src=\"https://kit.fontawesome.com/f14d152ebc.js\" crossorigin=\"anonymous\"></script>\r\n  <!-- google font -->\r\n      <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\r\n      <!-- font family -->\r\n<link rel=\"stylesheet\" href=\"../assets/css/normilze.css\">\r\n    <link rel=\"stylesheet\" href=\"../assets/css/pages/login.css\">\r\n   <title> Formix | Log in</title>\r\n      \r\n</head>\r\n<body>\r\n <div class=\"container\">\r\n    <div class=\"form\">\r\n<div class=\"text\">\r\n    <h2>\r\nWELCOME BACK\r\n    </h2>\r\n    <p>welcome back ! please inter your details</p>\r\n    </div>\r\n   <form action=\"\">\r\n    \r\n        <label for=\"email\">Email</label>\r\n        <input type=\"email\" name=\"email\" id=\"email\" placeholder=\"Enter Your Email\">\r\n    \r\n  \r\n        <label for=\"pass\">Password</label>\r\n        <input type=\"password\" name=\"pass\" id=\"email\" placeholder=\"Enter Your Password\" >\r\n   <input type=\"submit\" name=\"send\" id=\"send\" value=\"sing-in\">\r\n\r\n   </form>\r\n<div class=\"sing-in\">\r\n    <p>Don’t have an account ?</p>\r\n    <a href=\"sign-up.html\">sign-up</a>\r\n</div>\r\n\r\n \r\n    \r\n</div>\r\n<div class=\"img\">\r\n    \r\n    </div>\r\n\r\n </div>   \r\n</body>\r\n</html>\r\n\r\n"
+        }
+    ]
+}

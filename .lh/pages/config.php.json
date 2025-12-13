@@ -1,0 +1,30 @@
+{
+    "sourceFile": "pages/config.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1765025273619,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1765025279980,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,3 @@\n <?php\n-?\n\\ No newline at end of file\n+$\n+?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765025291000,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n <?php\n-$db_S\n+$db_Se\n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765025299388,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n <?php\n-$db_Server = \"localhost\"\n+$db_Server = \"localhost\";\n ?>\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1765025273619,
+            "name": "Commit-0",
+            "content": "<?php\n?"
+        }
+    ]
+}

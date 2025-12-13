@@ -1,0 +1,42 @@
+{
+    "sourceFile": "pages/login.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 6,
+            "patches": [
+                {
+                    "date": 1765147277100,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1765147285959,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +0,0 @@\n-<?php include \"config.php\"; $error_msg = \"\"; if (isset($_POST[\"send\"])){ $email = $_POST[\"email\"]; $pass = $_POST[\"pass\"]; $sql = \"SELECT * FROM users WHERE email ='$email'\"; $result = mysqli_query($conn , $sql); if (mysqli_num_rows($result)>0){ $user = mysqli_fetch_assoc($result); if(password_verify($pass , $user[\"password\"])){ header(\"Location: dashboard.php\"); exit(); }else{ $error_msg = \" Incorrect password!\"; } }else{ $error_msg = \" Email not found!\"; } } mysqli_close($conn); ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765147301227,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,40 @@\n+<?php \n+include \"config.php\";\n+$error_msg = \"\";\n+\n+if (isset($_POST[\"send\"])){\n+\n+    $email = trim($_POST[\"email\"]);\n+    $pass  = trim($_POST[\"pass\"]);\n+\n+    // ===== 1) التحقق من الحقول الفارغة =====\n+    if (empty($email) || empty($pass)) {\n+        $error_msg = \"Please enter both email and password!\";\n+    } else {\n+\n+        // ===== 2) التحقق من وجود المستخدم =====\n+        $sql = \"SELECT * FROM users WHERE email ='$email'\";\n+        $result = mysqli_query($conn , $sql);\n+\n+        if (mysqli_num_rows($result) > 0){\n+\n+            $user = mysqli_fetch_assoc($result);\n+\n+            // ===== 3) التحقق من كلمة السر =====\n+            if (password_verify($pass , $user[\"password\"])){\n+\n+                header(\"Location: dashboard.php\");\n+                exit();\n+\n+            } else {\n+                $error_msg = \"Incorrect password!\";\n+            }\n+\n+        } else {\n+            $error_msg = \"Email not found!\";\n+        }\n+    }\n+}\n+\n+mysqli_close($conn);\n+?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765147308372,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,22 +6,22 @@\n \n     $email = trim($_POST[\"email\"]);\n     $pass  = trim($_POST[\"pass\"]);\n \n-    // ===== 1) التحقق من الحقول الفارغة =====\n+ \n     if (empty($email) || empty($pass)) {\n         $error_msg = \"Please enter both email and password!\";\n     } else {\n \n-        // ===== 2) التحقق من وجود المستخدم =====\n+        \n         $sql = \"SELECT * FROM users WHERE email ='$email'\";\n         $result = mysqli_query($conn , $sql);\n \n         if (mysqli_num_rows($result) > 0){\n \n             $user = mysqli_fetch_assoc($result);\n \n-            // ===== 3) التحقق من كلمة السر =====\n+          \n             if (password_verify($pass , $user[\"password\"])){\n \n                 header(\"Location: dashboard.php\");\n                 exit();\n"
+                },
+                {
+                    "date": 1765147324918,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,5 +36,58 @@\n     }\n }\n \n mysqli_close($conn);\n-?>\n\\ No newline at end of file\n+?>\n+<!--login.html-->\n+<!DOCTYPE html>\n+<html lang=\"en\">\n+<head>\n+    <meta charset=\"UTF-8\">\n+ \n+   <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n+     <!-- font awsome -->\n+<script src=\"https://kit.fontawesome.com/f14d152ebc.js\" crossorigin=\"anonymous\"></script>\n+  <!-- google font -->\n+      <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n+      <!-- font family -->\n+<link rel=\"stylesheet\" href=\"../assets/css/normilze.css\">\n+    <link rel=\"stylesheet\" href=\"../assets/css/pages/login.css\">\n+   <title> Formix | Log in</title>\n+      \n+</head>\n+<body>\n+ <div class=\"container\">\n+    <div class=\"form\">\n+<div class=\"text\">\n+    <h2>\n+WELCOME BACK\n+    </h2>\n+    <p>welcome back ! please inter your details</p>\n+    </div>\n+   <form action=\"\">\n+    \n+        <label for=\"email\">Email</label>\n+        <input type=\"email\" name=\"email\" id=\"email\" placeholder=\"Enter Your Email\">\n+    \n+  \n+        <label for=\"pass\">Password</label>\n+        <input type=\"password\" name=\"pass\" id=\"email\" placeholder=\"Enter Your Password\" >\n+   <input type=\"submit\" name=\"send\" id=\"send\" value=\"sing-in\">\n+\n+   </form>\n+<div class=\"sing-in\">\n+    <p>Don’t have an account ?</p>\n+    <a href=\"sign-up.html\">sign-up</a>\n+</div>\n+\n+ \n+    \n+</div>\n+<div class=\"img\">\n+    \n+    </div>\n+\n+ </div>   \n+</body>\n+</html>\n+\n"
+                },
+                {
+                    "date": 1765147337254,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -71,10 +71,15 @@\n     \n   \n         <label for=\"pass\">Password</label>\n         <input type=\"password\" name=\"pass\" id=\"email\" placeholder=\"Enter Your Password\" >\n+ <?php if(!empty($error_msg)): ?>\n+    <p style=\"color:red; font-weight:bold; margin-top:10px;\">\n+        <?php echo $error_msg; ?>\n+    </p>\n+<?php endif; ?>\n+\n  \n- \n         <input type=\"submit\" name=\"send\" id=\"send\" value=\"sing-in\">\n \n    </form>\n <div class=\"sing-in\">\n"
+                },
+                {
+                    "date": 1765147362844,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -72,9 +72,9 @@\n   \n         <label for=\"pass\">Password</label>\n         <input type=\"password\" name=\"pass\" id=\"email\" placeholder=\"Enter Your Password\" >\n  <?php if(!empty($error_msg)): ?>\n-    <p style=\"color:red; font-weight; margin-top:10px;\">\n+    <p style=\"color:red; font-weight:; margin-top:10px;\">\n         <?php echo $error_msg; ?>\n     </p>\n <?php endif; ?>\n \n"
+                }
+            ],
+            "date": 1765147277100,
+            "name": "Commit-0",
+            "content": "<?php include \"config.php\"; $error_msg = \"\"; if (isset($_POST[\"send\"])){ $email = $_POST[\"email\"]; $pass = $_POST[\"pass\"]; $sql = \"SELECT * FROM users WHERE email ='$email'\"; $result = mysqli_query($conn , $sql); if (mysqli_num_rows($result)>0){ $user = mysqli_fetch_assoc($result); if(password_verify($pass , $user[\"password\"])){ header(\"Location: dashboard.php\"); exit(); }else{ $error_msg = \" Incorrect password!\"; } }else{ $error_msg = \" Email not found!\"; } } mysqli_close($conn); ?>"
+        }
+    ]
+}
