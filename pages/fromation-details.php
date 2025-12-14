@@ -1,8 +1,13 @@
 <!--formation-details.html-->
 
 <?php 
+  session_start();
+if (!isset($_SESSION['user_id'])) {
+    header("Location: ../index.html");
+exit();
+
+}
 include "config.php";
-session_start();
 ?>
 
 <!DOCTYPE html>
@@ -72,7 +77,7 @@ session_start();
                 </li>
                
                 <li>
-                       <a  href="../index.html">
+                       <a  href="logout.php">
 <i class="fa-solid fa-right-from-bracket"></i>
 
 

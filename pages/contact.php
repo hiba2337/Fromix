@@ -1,6 +1,33 @@
 <?php 
-include "config.php";
 session_start();
+if (!isset($_SESSION['user_id'])) {
+    header("Location: ../index.html");
+    exit();
+}
+$message_succ = "";
+include "config.php";
+if (isset($_POST["send"])){
+
+  $userid = $_SESSION['user_id'];
+  $fname  = $_POST["firstname"];
+  $lname  = $_POST["lastname"];
+  $email  = $_POST["email"];
+  $phone  = $_POST["phone"];
+  $message = $_POST["message"];
+  
+  $sql = "INSERT INTO contact_messages (user_id, firstname, lastname, email, phone, message)
+          VALUES ('$userid', '$fname', '$lname', '$email', '$phone', '$message')";
+  
+  $result = mysqli_query($conn, $sql);
+  
+  if ($result) {
+     $message_succ= "Message sent successfully!";
+  } else {
+      echo "Error: " . mysqli_error($conn);
+  }
+}
+
+mysqli_close($conn);
 ?>
 
 <!DOCTYPE html>
@@ -20,6 +47,11 @@ session_start();
 
  </head>
 <body>
+  <?php 
+if (!empty($message_succ)) {
+    echo "<p class='success-message'>$message_succ</p>";
+}
+?>
   <div class="contact-page">
 
     <aside class="side-bar">
@@ -67,7 +99,7 @@ session_start();
                  </li>
                 
                  <li>
-                        <a  href="../index.html">
+                        <a  href="logout.php">
  <i class="fa-solid fa-right-from-bracket"></i>
  
  
@@ -113,16 +145,17 @@ session_start();
  
            <h2>Get IN TOUCH</h2>
            <p>24/7 will answer your questions and problems</p>
-           <form action="">
+           <form action="contact.php" method="post">
    <div class="name-input">
  
-     <input type="text" placeholder="First Name">
-     <input type="text" placeholder="Last Name">
+     <input type="text" placeholder="First Name" name="firstname">
+     <input type="text" placeholder="Last Name" name="lastname">
    </div>
-             <input type="email" placeholder="  Email">
-             <input type="text" placeholder=" Phone">
+           <input type="email" placeholder="Email" name="email">
+
+             <input type="text" placeholder=" Phone" name="phone">
               <textarea class="input" placeholder="Descirbe Your issue..." name="message"></textarea>
-                 <input type="submit" value="Send" />
+                 <input type="submit" value="Send" name="send" />
            </form>
          </div>
        </div>

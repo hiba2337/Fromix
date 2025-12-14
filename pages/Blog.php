@@ -1,6 +1,11 @@
 <?php
+  session_start();
+if (!isset($_SESSION['user_id'])) {
+   header("Location: ../index.html");
+exit();
+
+}
 require_once "config.php";
-session_start();
 $search = $_GET['search-blog'] ?? "";
 if (!isset($_GET["search-btn"]) || empty($search)) {
   $sql = "SELECT * FROM blog_posts ORDER BY date_post DESC";
@@ -91,7 +96,7 @@ if(isset($_POST["Subs"])){
                 </li>
                
                      <li>
-                       <a  href="contact.html">
+                       <a  href="contact.php">
         <i class="fa-solid fa-phone"></i>
 
 
@@ -100,7 +105,7 @@ if(isset($_POST["Subs"])){
                      </li>
                
                 <li>
-                       <a  href="../index.html">
+                       <a  href="logout.php">
 <i class="fa-solid fa-right-from-bracket"></i>
 
 

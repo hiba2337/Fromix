@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 3,
+            "activePatchIndex": 4,
             "patches": [
                 {
                     "date": 1765668340763,
@@ -20,6 +20,10 @@
                 {
                     "date": 1765668366974,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <?php \r\n-include \"config\"\r\n+include \"config.\"\r\n session_start();\r\n ?>\r\n <!DOCTYPE html>\r\n <html lang=\"en\">\r\n"
+                },
+                {
+                    "date": 1765707367934,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -346,5 +346,5 @@\n         </main>\r\n     </div>\r\n \r\n </body>\r\n-</htm\n\\ No newline at end of file\n+</html>\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1765668340763,

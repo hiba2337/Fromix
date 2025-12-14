@@ -50,7 +50,7 @@ if (isset($_POST["send"])){
         $sql = "SELECT * FROM users WHERE email ='$email'";
         $result = mysqli_query( $conn ,$sql);
 
-        if (mysqli_num_rows($result) > 0){
+        if (mysqli_num_rows( $result) > 0){
 
             $user = mysqli_fetch_assoc($result );
 if ($user){

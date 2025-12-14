@@ -1,6 +1,11 @@
 <?php
+    session_start();
+if (!isset($_SESSION['user_id'])) {
+   header("Location: ../index.html");
+exit();
+
+}
 include "config.php";
-session_start();
 require_once "../assets/qr-code/phpqrcode/qrlib.php";
 
 
@@ -103,7 +108,7 @@ $result = mysqli_query($conn, $sql);
             <li><a href="panier.php"><i class="fa-solid fa-cart-shopping"></i><span>Cart</span></a></li>
             <li><a href="Blog.php"><i class="fa-solid fa-pen-nib"></i><span>Blog</span></a></li>
             <li><a href="contact.php"><i class="fa-solid fa-phone"></i><span>Contact</span></a></li>
-            <li><a href="../index.html"><i class="fa-solid fa-right-from-bracket"></i><span>Log Out</span></a></li>
+            <li><a href="logout.php"><i class="fa-solid fa-right-from-bracket"></i><span>Log Out</span></a></li>
         </ul>
     </aside>
 

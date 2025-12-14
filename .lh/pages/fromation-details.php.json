@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 5,
+            "activePatchIndex": 9,
             "patches": [
                 {
                     "date": 1765668796431,
@@ -28,6 +28,22 @@
                 {
                     "date": 1765669522144,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n               <i class=\"fa-regular fa-chart-bar fa-fw\"></i>\r\n               <span>Dashboard</span>\r\n             </a>\r\n                 <li>\r\n-            <a  href=\"formation.html\">\r\n+            <a  href=\"formation.php\">\r\n               <i class=\"fa-solid fa-graduation-cap fa-fw\"></i>\r\n               <span>Courses</span>\r\n             </a>\r\n           </li>\r\n"
+                },
+                {
+                    "date": 1765707824812,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -71,9 +71,9 @@\n             </a>\r\n                 </li>\r\n                \r\n                 <li>\r\n-                       <a  href=\"../index.html\">\r\n+                       <a  href=\"logout.php\">\r\n <i class=\"fa-solid fa-right-from-bracket\"></i>\r\n \r\n \r\n \r\n"
+                },
+                {
+                    "date": 1765708053028,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,11 @@\n <!--formation-details.html-->\r\n \r\n <?php \r\n+if (!isset($_SESSION['user_id'])) {\r\n+    header(\"Location: index.html\");\r\n+    exit();\r\n+}\r\n include \"config.php\";\r\n session_start();\r\n ?>\r\n \r\n"
+                },
+                {
+                    "date": 1765708693595,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,11 @@\n <!--formation-details.html-->\r\n \r\n <?php \r\n if (!isset($_SESSION['user_id'])) {\r\n-    header(\"Location: index.html\");\r\n-    exit();\r\n+    header(\"Location: ../index.html\");\r\n+exit();\r\n+\r\n }\r\n include \"config.php\";\r\n session_start();\r\n ?>\r\n"
+                },
+                {
+                    "date": 1765708992063,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,14 @@\n <!--formation-details.html-->\r\n \r\n <?php \r\n+  session_start();\r\n if (!isset($_SESSION['user_id'])) {\r\n     header(\"Location: ../index.html\");\r\n exit();\r\n \r\n }\r\n include \"config.php\";\r\n-session_start();\r\n ?>\r\n \r\n <!DOCTYPE html>\r\n <html lang=\"fr\">\r\n"
                 }
             ],
             "date": 1765668796431,

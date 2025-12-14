@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 2,
+            "activePatchIndex": 18,
             "patches": [
                 {
                     "date": 1765668567743,
@@ -16,6 +16,70 @@
                 {
                     "date": 1765668583877,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n                <span>Events</span>\r\n              </a>\r\n                  </li>\r\n                  <li>\r\n-                        <a  href=\"panier.html\">\r\n+                        <a  href=\"panier.php\">\r\n              <i class=\"fa-solid fa-cart-shopping\"></i>\r\n                <span>Cart</span>\r\n              </a>\r\n                  </li>\r\n@@ -57,9 +57,9 @@\n              </a>\r\n                  </li>\r\n                 \r\n                  <li>\r\n-                        <a  href=\"contact.html\">\r\n+                        <a  href=\"contact.php\">\r\n          <i class=\"fa-solid fa-phone\"></i>\r\n  \r\n  \r\n                <span>Contact</span>\r\n"
+                },
+                {
+                    "date": 1765707728913,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,9 +66,9 @@\n              </a>\r\n                  </li>\r\n                 \r\n                  <li>\r\n-                        <a  href=\"../index.html\">\r\n+                        <a  href=\"../l\">\r\n  <i class=\"fa-solid fa-right-from-bracket\"></i>\r\n  \r\n  \r\n  \r\n"
+                },
+                {
+                    "date": 1765707834846,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,9 +66,9 @@\n              </a>\r\n                  </li>\r\n                 \r\n                  <li>\r\n-                        <a  href=\"../l\">\r\n+                        <a  href=\"logout.php\">\r\n  <i class=\"fa-solid fa-right-from-bracket\"></i>\r\n  \r\n  \r\n  \r\n"
+                },
+                {
+                    "date": 1765708028525,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,9 @@\n <?php \r\n+if (!isset($_SESSION['user_id'])) {\r\n+    header(\"Location: index.html\");\r\n+    exit();\r\n+}\r\n include \"config.php\";\r\n session_start();\r\n ?>\r\n \r\n"
+                },
+                {
+                    "date": 1765708673307,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n <?php \r\n if (!isset($_SESSION['user_id'])) {\r\n-    header(\"Location: index.html\");\r\n-    exit();\r\n+   header(\"Location: ../index.html\");\r\n+exit();\r\n+\r\n }\r\n include \"config.php\";\r\n session_start();\r\n ?>\r\n"
+                },
+                {
+                    "date": 1765708975190,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,12 @@\n <?php \r\n+  session_start();\r\n if (!isset($_SESSION['user_id'])) {\r\n    header(\"Location: ../index.html\");\r\n exit();\r\n \r\n }\r\n include \"config.php\";\r\n-session_start();\r\n ?>\r\n \r\n <!DOCTYPE html>\r\n <html lang=\"fr\">\r\n"
+                },
+                {
+                    "date": 1765710408967,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -117,9 +117,9 @@\n          <div class=\"content\">\r\n  \r\n            <h2>Get IN TOUCH</h2>\r\n            <p>24/7 will answer your questions and problems</p>\r\n-           <form action=\"\">\r\n+           <form action=\"contact.php\" method=\"post\">\r\n    <div class=\"name-input\">\r\n  \r\n      <input type=\"text\" placeholder=\"First Name\">\r\n      <input type=\"text\" placeholder=\"Last Name\">\r\n"
+                },
+                {
+                    "date": 1765710422286,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,9 @@\n if (!isset($_SESSION['user_id'])) {\r\n    header(\"Location: ../index.html\");\r\n exit();\r\n \r\n+\r\n }\r\n include \"config.php\";\r\n ?>\r\n \r\n"
+                },
+                {
+                    "date": 1765710428305,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,11 +2,11 @@\n   session_start();\r\n if (!isset($_SESSION['user_id'])) {\r\n    header(\"Location: ../index.html\");\r\n exit();\r\n+}\r\n \r\n-\r\n-}\r\n+$\r\n include \"config.php\";\r\n ?>\r\n \r\n <!DOCTYPE html>\r\n"
+                },
+                {
+                    "date": 1765710440876,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n    header(\"Location: ../index.html\");\r\n exit();\r\n }\r\n \r\n-$\r\n+$email =$o\r\n include \"config.php\";\r\n ?>\r\n \r\n <!DOCTYPE html>\r\n"
+                },
+                {
+                    "date": 1765710447922,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n    header(\"Location: ../index.html\");\r\n exit();\r\n }\r\n \r\n-$email =$o\r\n+$email =$_POST[\"email\"]\r\n include \"config.php\";\r\n ?>\r\n \r\n <!DOCTYPE html>\r\n"
+                },
+                {
+                    "date": 1765710458563,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,10 @@\n    header(\"Location: ../index.html\");\r\n exit();\r\n }\r\n \r\n-$email =$_POST[\"email\"]\r\n+$email =$_POST[\"email\"];\r\n+$username = $\r\n include \"config.php\";\r\n ?>\r\n \r\n <!DOCTYPE html>\r\n"
+                },
+                {
+                    "date": 1765710465715,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n exit();\r\n }\r\n \r\n $email =$_POST[\"email\"];\r\n-$username = $\r\n+$username = $_POST[]\r\n include \"config.php\";\r\n ?>\r\n \r\n <!DOCTYPE html>\r\n"
+                },
+                {
+                    "date": 1765710478758,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n exit();\r\n }\r\n \r\n $email =$_POST[\"email\"];\r\n-$username = $_POST[]\r\n+$username = $_POST[];\r\n include \"config.php\";\r\n ?>\r\n \r\n <!DOCTYPE html>\r\n@@ -122,9 +122,9 @@\n            <p>24/7 will answer your questions and problems</p>\r\n            <form action=\"contact.php\" method=\"post\">\r\n    <div class=\"name-input\">\r\n  \r\n-     <input type=\"text\" placeholder=\"First Name\">\r\n+     <input type=\"text\" placeholder=\"First Name\" name=\"\">\r\n      <input type=\"text\" placeholder=\"Last Name\">\r\n    </div>\r\n              <input type=\"email\" placeholder=\"  Email\">\r\n              <input type=\"text\" placeholder=\" Phone\">\r\n"
+                },
+                {
+                    "date": 1765710487626,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -122,10 +122,10 @@\n            <p>24/7 will answer your questions and problems</p>\r\n            <form action=\"contact.php\" method=\"post\">\r\n    <div class=\"name-input\">\r\n  \r\n-     <input type=\"text\" placeholder=\"First Name\" name=\"\">\r\n-     <input type=\"text\" placeholder=\"Last Name\">\r\n+     <input type=\"text\" placeholder=\"First Name\" name=\"name\">\r\n+     <input type=\"text\" placeholder=\"Last Name\" name=\" \">\r\n    </div>\r\n              <input type=\"email\" placeholder=\"  Email\">\r\n              <input type=\"text\" placeholder=\" Phone\">\r\n               <textarea class=\"input\" placeholder=\"Descirbe Your issue...\" name=\"message\"></textarea>\r\n"
+                },
+                {
+                    "date": 1765710493718,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -122,9 +122,9 @@\n            <p>24/7 will answer your questions and problems</p>\r\n            <form action=\"contact.php\" method=\"post\">\r\n    <div class=\"name-input\">\r\n  \r\n-     <input type=\"text\" placeholder=\"First Name\" name=\"name\">\r\n+     <input type=\"text\" placeholder=\"First Name\" name=\"firstname\">\r\n      <input type=\"text\" placeholder=\"Last Name\" name=\" lastname\">\r\n    </div>\r\n              <input type=\"email\" placeholder=\"  Email\">\r\n              <input type=\"text\" placeholder=\" Phone\">\r\n"
+                },
+                {
+                    "date": 1765710549958,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n }\r\n \r\n $email =$_POST[\"email\"];\r\n $fname = $_POST[\"firstname\"];\r\n-$lname = $_POST\r\n+$lname = $_POST[]\r\n include \"config.php\";\r\n ?>\r\n \r\n <!DOCTYPE html>\r\n"
                 }
             ],
             "date": 1765668567743,

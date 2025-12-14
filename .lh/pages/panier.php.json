@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 4,
+            "activePatchIndex": 6,
             "patches": [
                 {
                     "date": 1765668738743,
@@ -24,6 +24,14 @@
                 {
                     "date": 1765669541091,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n     <div class=\"side-bar\">\r\n      <img src=\"../assets/images/logo/sidebar.png\" alt=\"\" class=\"logo\">\r\n       <ul>\r\n           <li>\r\n-      <a  href=\"dashboard.html\">\r\n+      <a  href=\"dashboard.php\">\r\n         <i class=\"fa-regular fa-chart-bar fa-fw\"></i>\r\n         <span>Dashboard</span>\r\n       </a>\r\n          </li>\r\n"
+                },
+                {
+                    "date": 1765707856442,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,9 +67,9 @@\n       </a>\r\n                </li>\r\n          \r\n           <li>\r\n-                 <a  href=\"../index.html\">\r\n+                 <a  href=\".lgo\">\r\n <i class=\"fa-solid fa-right-from-bracket\"></i>\r\n \r\n \r\n \r\n"
+                },
+                {
+                    "date": 1765707861858,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,9 +67,9 @@\n       </a>\r\n                </li>\r\n          \r\n           <li>\r\n-                 <a  href=\".lgo\">\r\n+                 <a  href=\".logout.php\">\r\n <i class=\"fa-solid fa-right-from-bracket\"></i>\r\n \r\n \r\n \r\n"
                 }
             ],
             "date": 1765668738743,
