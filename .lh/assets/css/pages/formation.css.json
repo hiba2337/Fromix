@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 8,
+            "activePatchIndex": 12,
             "patches": [
                 {
                     "date": 1764629957816,
@@ -40,6 +40,22 @@
                 {
                     "date": 1765146936041,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -74,9 +74,9 @@\n   }\r\n }\r\n .side-bar .logo{\r\n width: 100%;\r\n-    padding: 10px 20px 30px;\r\n+    padding: 10px 20px 30px !important;\r\n }\r\n @media(max-width:767px){\r\n .side-bar .logo {\r\n   font-size: 16px;\r\n"
+                },
+                {
+                    "date": 1765733207041,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,8 +45,9 @@\n \r\n *:focus{\r\n   outline: none;\r\n }\r\n+cours-details\r\n /* start side bare */\r\n .courses{\r\n display: flex;  \r\n   min-height: 100vh;\r\n@@ -73,9 +74,9 @@\n             padding: 10px 0;\r\n   }\r\n }\r\n .side-bar .logo{\r\n-width: 100%;\r\n+width: 100% !important;\r\n     padding: 10px 20px 30px !important;\r\n }\r\n @media(max-width:767px){\r\n .side-bar .logo {\r\n"
+                },
+                {
+                    "date": 1765733220423,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,9 +45,12 @@\n \r\n *:focus{\r\n   outline: none;\r\n }\r\n-cours-details\r\n+.ours-details{\r\n+  display: flex;\r\n+  gap: 3px;\r\n+}\r\n /* start side bare */\r\n .courses{\r\n display: flex;  \r\n   min-height: 100vh;\r\n"
+                },
+                {
+                    "date": 1765733327885,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,9 +47,9 @@\n   outline: none;\r\n }\r\n .ours-details{\r\n   display: flex;\r\n-  gap: 3px;\r\n+  gap: 30px;\r\n }\r\n /* start side bare */\r\n .courses{\r\n display: flex;  \r\n@@ -127,8 +127,9 @@\n }\r\n \r\n /* end side bare */\r\n /* start header */\r\n+.con\r\n .courses-content{\r\n   width: 100%;\r\n }\r\n .courses-content header{\r\n"
+                },
+                {
+                    "date": 1765733338567,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -128,9 +128,9 @@\n \r\n /* end side bare */\r\n /* start header */\r\n .container{\r\n-  margin-right: 3px;\r\n+  margin-right: 30;\r\n }\r\n .courses-content{\r\n   width: 100%;\r\n }\r\n"
                 }
             ],
             "date": 1764629957816,

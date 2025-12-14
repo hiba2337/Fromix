@@ -21,7 +21,7 @@ if (isset($_POST["send"])){
   $result = mysqli_query($conn, $sql);
   
   if ($result) {
-     $message_succ= "Message sent successfully!";
+     $message_succ= "Message sent successfully 🎉";
   } else {
       echo "Error: " . mysqli_error($conn);
   }

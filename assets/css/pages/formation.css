@@ -46,6 +46,7 @@ a {
 *:focus{
   outline: none;
 }
+
 /* start side bare */
 .courses{
 display: flex;  
@@ -124,6 +125,7 @@ display: flex;
 
 /* end side bare */
 /* start header */
+
 .courses-content{
   width: 100%;
 }

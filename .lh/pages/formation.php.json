@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 1,
+            "activePatchIndex": 2,
             "patches": [
                 {
                     "date": 1765668654911,
@@ -12,6 +12,10 @@
                 {
                     "date": 1765707800864,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -74,9 +74,9 @@\n             </a>\r\n                 </li>\r\n                \r\n                 <li>\r\n-                       <a  href=\"../lo\">\r\n+                       <a  href=\"../log\">\r\n <i class=\"fa-solid fa-right-from-bracket\"></i>\r\n \r\n \r\n \r\n"
+                },
+                {
+                    "date": 1765732943980,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -199,9 +199,9 @@\n     <p class=\"level\"><strong>Level:</strong> All Levels</p>\r\n     <p class=\"duration\"><strong>Duration:</strong> 6 Weeks</p>\r\n   </div>\r\n   <div class=\"course-footer\">\r\n-      <a href=\"fro\">View Details</a>\r\n+      <a href=\"from\">View Details</a>\r\n    \r\n       <div class=\"rating\">\r\n         <div class=\"rating-value\">\r\n \r\n"
                 }
             ],
             "date": 1765668654911,

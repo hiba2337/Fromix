@@ -45,6 +45,10 @@ a {
 *:focus{
   outline: none;
 }
+.cours-details{
+  display: flex;
+  gap: 30px;
+}
 /* start side bare */
 .courses{
   display: flex;
@@ -124,6 +128,7 @@ display: flex;
 /* start content */
 
 .container{
+  margin-right: 30px;
  margin-top: 20px;
   display: flex;
 flex-direction: column;

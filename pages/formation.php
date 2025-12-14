@@ -169,7 +169,7 @@ include "config.php";
     <p class="duration"><strong>Duration:</strong> 3 Weeks</p>
   </div>
   <div class="course-footer">
-    <a href="fromation-details.html">View Details</a>
+    <a href="fromation-details.php">View Details</a>
    <div class="rating">
     <div class="rating-value">
 
@@ -200,7 +200,7 @@ include "config.php";
     <p class="duration"><strong>Duration:</strong> 6 Weeks</p>
   </div>
   <div class="course-footer">
-      <a href="#">View Details</a>
+      <a href="fromation-details.php">View Details</a>
    
       <div class="rating">
         <div class="rating-value">

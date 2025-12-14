@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 9,
+            "activePatchIndex": 11,
             "patches": [
                 {
                     "date": 1765668796431,
@@ -44,6 +44,14 @@
                 {
                     "date": 1765708992063,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,14 @@\n <!--formation-details.html-->\r\n \r\n <?php \r\n+  session_start();\r\n if (!isset($_SESSION['user_id'])) {\r\n     header(\"Location: ../index.html\");\r\n exit();\r\n \r\n }\r\n include \"config.php\";\r\n-session_start();\r\n ?>\r\n \r\n <!DOCTYPE html>\r\n <html lang=\"fr\">\r\n"
+                },
+                {
+                    "date": 1765738252641,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n      </style>\r\n     <title>Formix | Courses_details</title>\r\n </head>\r\n <body>\r\n-    <div class=\"cours-details\" style>\r\n+    <div class=\"cours-details\" style=\"\">\r\n         <aside class=\"side-bar\">\r\n             <h3 class=\"logo\">  <img src=\"../assets/images/logo/sidebar.png\" alt=\"\"></h3>\r\n             <ul>\r\n                 <li>\r\n"
+                },
+                {
+                    "date": 1765738264018,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n      </style>\r\n     <title>Formix | Courses_details</title>\r\n </head>\r\n <body>\r\n-    <div class=\"cours-details\" style=\"display:flex; gap:30\">\r\n+    <div class=\"cours-details\" style=\"display:flex; gap:30px\">\r\n         <aside class=\"side-bar\">\r\n             <h3 class=\"logo\">  <img src=\"../assets/images/logo/sidebar.png\" alt=\"\"></h3>\r\n             <ul>\r\n                 <li>\r\n"
                 }
             ],
             "date": 1765668796431,

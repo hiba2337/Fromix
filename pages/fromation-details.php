@@ -32,7 +32,7 @@ include "config.php";
     <title>Formix | Courses_details</title>
 </head>
 <body>
-    <div class="cours-details">
+    <div class="cours-details" style="display:flex; gap:30px">
         <aside class="side-bar">
             <h3 class="logo">  <img src="../assets/images/logo/sidebar.png" alt=""></h3>
             <ul>
@@ -91,7 +91,7 @@ include "config.php";
         </aside>
         
           
-<div class="container">
+<div class="container" style="margin-right: 30px;">
 
   <div class="head">
 

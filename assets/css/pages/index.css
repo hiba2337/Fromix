@@ -283,17 +283,20 @@ margin: 6px 20px 4px;
  
 }
 @keyframes landing-anima {
-  25%{
+  0%{
      background-image: url('../../images/landing/landing1.png');
   }
-  50%{
+  30%{
      background-image: url('../../images/landing/landing04.png');
   }
-  75%{
+  60%{
      background-image: url('../../images/landing/landing03.png');
   }
-  100%{
+  90%{
      background-image: url('../../images/landing/desktop-table-office.png');
+  }
+  100%{
+     background-image: url('../../images/landing/landing1.png');
   }
 }
 

@@ -1,6 +1,6 @@
 
 <?php
-
+session_start();
 include "config.php";
 $error_msg = "";
 
@@ -26,8 +26,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                            VALUES ('$name', '$email', '$hashed_pass', '$phone', '$role_id')";
 
             if (mysqli_query($conn, $insert_sql)) {
-header("Location: dashboard.html");
-                exit();
+          $_SESSION['user_id'] = mysqli_insert_id($conn);
+    $_SESSION['user_name'] = $name;
+    $_SESSION['user_email'] = $email;
+header("Location: dashboard.php");           
+exit();
             } else {
                 $error_msg = "Database error: " . mysqli_error($conn);
             }
