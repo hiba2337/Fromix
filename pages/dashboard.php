@@ -1,13 +1,25 @@
 <?php 
-    session_start();
+session_start();
 if (!isset($_SESSION['user_id'])) {
-    header("Location: ../index.html");
-exit();
-
+    header("Location: login.php");
+    exit();
 }
-include "config.php";
 
+require_once('../php/config.php');
 
+// جلب معلومات المستخدم
+$user = getCurrentUser();
+$user_name = $user['prenom'] . ' ' . $user['nom'];
+
+// جلب إحصائيات المستخدم
+$stmt = $pdo->prepare("
+    SELECT COUNT(*) as formations_actives 
+    FROM inscriptions 
+    WHERE user_id = ? AND statut = 'confirme'
+");
+$stmt->execute([$_SESSION['user_id']]);
+$stats = $stmt->fetch();
+?>
 
 
 mysqli_close($conn);
@@ -17,91 +29,39 @@ mysqli_close($conn);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!-- font awsome -->
-<script src="https://kit.fontawesome.com/f14d152ebc.js" crossorigin="anonymous"></script>
-  <!-- google font -->
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-      <!-- font family -->
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <!-- style -->
-   
+    <script src="https://kit.fontawesome.com/f14d152ebc.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/pages/dashboard.css">
-    <title>Fromix | Dashboard </title>
- 
+    <title>Fromix | Dashboard</title>
 </head>
 
-    <!-- Sidebar -->
-       
-<body>
-    <div class="dashborad">
 
-        <div class="side-bar">
-                <img src="../assets/images/logo/sidebar.png" alt="" class="logo">
-    
-                <ul>
-                    <li>
-                <a  href="dashboard.php">
-                  <i class="fa-regular fa-chart-bar fa-fw"></i>
-                  <span>Dashboard</span>
-                </a>
-                    <li>
-                <a  href="formation.php">
-                  <i class="fa-solid fa-graduation-cap fa-fw"></i>
-                  <span>Courses</span>
-                </a>
-              </li>
-                    <li>
-                           <a  href="eventement.php">
-                 <i class="fa-solid fa-calendar-days"></i>
-                  <span>Events</span>
-                </a>
-                    </li>
-                    <li>
-                           <a  href="panier.php">
-                <i class="fa-solid fa-cart-shopping"></i>
-                  <span>Cart</span>
-                </a>
-                    </li>
-                    <li>
-                           <a  href="Blog.php">
-               <i class="fa-solid fa-pen-nib"></i>
-    
-                  <span>Blog</span>
-                </a>
-                    </li>
-                   
-                    <li>
-                           <a  href="contact.php">
-            <i class="fa-solid fa-phone"></i>
-    
-    
-                  <span>Contact</span>
-                </a>
-                    </li>
-                   
-                    <li>
-                           <a  href="logout.php">
-    <i class="fa-solid fa-right-from-bracket"></i>
-    
-    
-    
-                  <span>Log Out</span>
-                </a>
-                    </li>
-                   
-                    
-                </ul>
-            </div>
-    
-    
-        <!-- Main Content -->
+<body>
+
+        <div class="side-bar"> 
+            <img src="../assets/images/logo/sidebar.png" alt="" class="logo">
+            <ul>
+                <li><a href="dashboard.php"><i class="fa-regular fa-chart-bar fa-fw"></i><span>Dashboard</span></a></li>
+                <li><a href="formation.php"><i class="fa-solid fa-graduation-cap fa-fw"></i><span>Courses</span></a></li>
+                <li><a href="eventement.php"><i class="fa-solid fa-calendar-days"></i><span>Events</span></a></li>
+                <li><a href="panier.php"><i class="fa-solid fa-cart-shopping"></i><span>Cart</span></a></li>
+                <li><a href="Blog.php"><i class="fa-solid fa-pen-nib"></i><span>Blog</span></a></li>
+                <li><a href="contact.php"><i class="fa-solid fa-phone"></i><span>Contact</span></a></li>
+                <li><a href="logout.php"><i class="fa-solid fa-right-from-bracket"></i><span>Log Out</span></a></li>
+            </ul>
+        </div>
+        
+        
+        
+        
+        
+
         <main class="main-content">
-            <!-- Header -->
             <header class="dashboard-header">
                 <div class="header-left">
                     <h1>Dashboard</h1>
-                    <p>Bienvenue, <strong>narimane MEZAZGA</strong></p>
+                    <p>Bienvenue, <strong><?php echo htmlspecialchars($user_name); ?></strong></p>
                 </div>
                 <div class="header-right">
                     <div class="search-box">
@@ -123,8 +83,7 @@ mysqli_close($conn);
                     </div>
                 </div>
             </header>
-    
-            <!-- Stats Cards -->
+
             <section class="stats-section">
                 <div class="stat-card">
                     <div class="stat-icon blue">
@@ -134,7 +93,7 @@ mysqli_close($conn);
                         </svg>
                     </div>
                     <div class="stat-info">
-                        <h3>8</h3>
+                        <h3><?php echo $stats['formations_actives']; ?></h3>
                         <p>Formations Actives</p>
                     </div>
                 </div>

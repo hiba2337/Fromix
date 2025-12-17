@@ -19,7 +19,18 @@ session_start();
     <!-- CSS Files -->
     <link rel="stylesheet" href="../assets/css/pages/panier.css">
     <title>Formix  |  Cart</title>
+
+
+
+
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/components/panier.js"></script>
 </head>
+
+
+
+
+
 <body>
 <div class="cart">
 

@@ -1,12 +1,16 @@
 <?php
 session_start();
+require_once('../php/config.php');
 
-$_SESSION = [];
+// تسجيل النشاط قبل الخروج
+if (isset($_SESSION['user_id'])) {
+    logActivity('LOGOUT', 'users', $_SESSION['user_id'], 'تسجيل خروج');
+}
+
+// تدمير الجلسة
 session_destroy();
 
-header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
-header("Pragma: no-cache");
-
-header("Location: ../index.html");
+// إعادة التوجيه لصفحة تسجيل الدخول
+header("Location: login.php");
 exit();
 ?>

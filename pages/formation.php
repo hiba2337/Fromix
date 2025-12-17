@@ -1,118 +1,136 @@
-<!--formation.html-->
 <?php 
-  session_start();
-if (!isset($_SESSION['user_id'])) {
-   header("Location: ../index.html");
-exit();
+session_start();
 
+// التحقق من تسجيل الدخول
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit();
 }
-include "config.php";
+
+// تضمين ملف الإعدادات
+require_once('../php/config.php');
+
+// جلب معلومات المستخدم
+$user = getCurrentUser();
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- font awsome -->
-<script src="https://kit.fontawesome.com/f14d152ebc.js" crossorigin="anonymous"></script>
-  <!-- google font -->
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-      <!-- font family -->
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/f14d152ebc.js" crossorigin="anonymous"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- font family -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/components/formations.js"></script>
+
+
     <!-- style -->
     <link rel="stylesheet" href="../assets/css/pages/formation.css">
 <title>Formix | Courses</title>
 
- <style>
+    <style>
         img{
             max-width: 100%;
             width: 300px;
         }
-    </style></head>
+    </style>
+</head>
+
+
+
 <body>
     <div class="courses">
-      <aside class="side-bar">
 
-           <img src="../assets/images/logo/sidebar.png" alt="" class="logo">
-
-
+        <aside class="side-bar">
+            <img src="../assets/images/logo/sidebar.png" alt="Fromix Logo" class="logo">
+            
             <ul>
                 <li>
-            <a  href="dashboard.php">
-              <i class="fa-regular fa-chart-bar fa-fw"></i>
-              <span>Dashboard</span>
-            </a>
-            </li>
-                <li>
-            <a  href="formation.php">
-              <i class="fa-solid fa-graduation-cap fa-fw"></i>
-              <span>Courses</span>
-            </a>
-          </li>
-                <li>
-                       <a  href="eventement.php">
-             <i class="fa-solid fa-calendar-days"></i>
-              <span>Events</span>
-            </a>
+                    <a href="dashboard.php">
+                        <i class="fa-regular fa-chart-bar fa-fw"></i>
+                        <span>Dashboard</span>
+                    </a>
                 </li>
                 <li>
-                       <a  href="panier.php">
-            <i class="fa-solid fa-cart-shopping"></i>
-              <span>Cart</span>
-            </a>
+                    <a href="formation.php" class="active">
+                        <i class="fa-solid fa-graduation-cap fa-fw"></i>
+                        <span>Courses</span>
+                    </a>
                 </li>
-               <li>
-                       <a  href="Blog.php">
-           <i class="fa-solid fa-pen-nib"></i>
-
-              <span>Blog</span>
-            </a>
-                </li>
-               
                 <li>
-                       <a  href="contact.php">
-        <i class="fa-solid fa-phone"></i>
-
-
-              <span>Contact</span>
-            </a>
+                    <a href="eventement.php">
+                        <i class="fa-solid fa-calendar-days"></i>
+                        <span>Events</span>
+                    </a>
                 </li>
-               
                 <li>
-                       <a  href="logout.php">
-<i class="fa-solid fa-right-from-bracket"></i>
-
-
-
-              <span>Log Out</span>
-            </a>
+                    <a href="panier.php">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span>Cart</span>
+                        <span class="cart-badge" style="display: none;">0</span>
+                    </a>
                 </li>
-               
-                
+                <li>
+                    <a href="Blog.php">
+                        <i class="fa-solid fa-pen-nib"></i>
+                        <span>Blog</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="contact.php">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>Contact</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="logout.php">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <span>Log Out</span>
+                    </a>
+                </li>
             </ul>
-      </aside>
+        </aside>
         
+
+
 <main class="courses-content">
     <header >
-     <div class="main-title">
-       <h2>Courses</h2>
-     </div>
-     
-    <div class="filter-box">
-  <form class="filter-course">
+      <div class="main-title">
+        <h2>Courses</h2>
+        <p>Découvrez nos formations professionnelles</p>
+      </div>
 
-    <div class="filter-item">
-      <i class="fa-solid fa-layer-group"></i>
-      <select name="category" id="category">
-        <option value="">Category</option>
-        <option value="web">Web Development</option>
-        <option value="design">UI/UX Design</option>
-        <option value="data">Data Science</option>
-        <option value="security">Cyber Security</option>
-        <option value="Marketing">Marketing</option>
-        <option value="Design">Design</option>
-      </select>
+
+                      <div class="search-box" style="margin: 20px 0;">
+                    <input type="text" id="search-input" placeholder="Rechercher une formation..." 
+                          style="width: 100%; max-width: 500px; padding: 12px 20px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px;">
+                </div>
+
+    <div class="filter-box">
+      <form class="filter-course">
+      <div class="filter-item">
+        <i class="fa-solid fa-layer-group"></i>
+        <select name="category" id="category">
+          <option value="">Category</option>
+          <option value="web">Web Development</option>
+          <option value="design">UI/UX Design</option>
+          <option value="data">Data Science</option>
+          <option value="security">Cyber Security</option>
+          <option value="Marketing">Marketing</option>
+          <option value="Design">Design</option>
+        </select>
     </div>
 
     <div class="filter-item">
@@ -148,13 +166,15 @@ include "config.php";
       </select>
     </div>
 
-    <button type="submit" class="btn-filter">Filter</button>
+        <button type="button" class="btn-filter" onclick="applyFilters()">Filtrer</button>
+        <button type="button" class="btn-reset" onclick="resetFilters()">Réinitialiser</button>
   </form>
 </div>
+</header> 
 
 
-           </header> 
-           <div class="content">
+
+<div class="content">
 <div class="box ">
   <div class="image">
 
@@ -219,6 +239,52 @@ include "config.php";
   </div>
 </div>
 
+
+
+
+            <div id="formations-container">
+                <!-- Les formations seront chargées ici via JavaScript -->
+            </div>
+            
+            <!-- Pagination (optionnel) -->
+            <div class="pagination" style="text-align: center; margin: 40px 0; display: none;">
+                <button class="btn-page">1</button>
+                <button class="btn-page">2</button>
+                <button class="btn-page">3</button>
+            </div>
+        </main>
+    </div>
+    
+    <!-- Loading Spinner (caché par défaut) -->
+    <div id="page-loader" style="display: none;">
+        <div class="spinner"></div>
+    </div>
+    
+    <!-- Scripts -->
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/components/formations.js"></script>
+    
+    <script>
+        // Fonctions de filtrage
+        function applyFilters() {
+            const category = document.getElementById('category').value;
+            const level = document.getElementById('level').value;
+            const price = document.getElementById('price').value;
+            
+            // Appeler la fonction de chargement avec les filtres
+            loadFormations({ category, level, price });
+        }
+        
+        function resetFilters() {
+            document.getElementById('filter-form').reset();
+            loadFormations();
+        }
+        
+        // Charger le compteur du panier au démarrage
+        window.addEventListener('DOMContentLoaded', () => {
+            updateCartBadge();
+        });
+    </script>
 <!-- 
 <div class="box ">
   <img src="../assets/images/courses/course04.png" alt="">
@@ -349,14 +415,5 @@ include "config.php";
 </main>
    </div> 
 
-
-
-
-
-
-
-
- 
- 
 </body>
 </html>
