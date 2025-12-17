@@ -1,4 +1,5 @@
-<!--formation-details.html-->
+
+
 
 <?php 
   session_start();
@@ -8,6 +9,9 @@ exit();
 
 }
 include "config.php";
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -194,11 +198,94 @@ preparing you for more advanced studies in machine learning and data science.</p
 </div>
       </div>
   </div>
-</div>
-          
+  <!-- Add Review Section -->
+<div class="add-review">
+  <h2>Leave a Review</h2>
 
-       
+  <form action="#" method="post" class="review-form">
+
+  <div class="rating">
+  <span>Rating:</span>
+   <div class="stars">
+        <input type="radio" name="rating" id="star5" value="5">
+        <label for="star5"><i class="fa-solid fa-star"></i></label>
+
+        <input type="radio" name="rating" id="star4" value="4">
+        <label for="star4"><i class="fa-solid fa-star"></i></label>
+
+        <input type="radio" name="rating" id="star3" value="3">
+        <label for="star3"><i class="fa-solid fa-star"></i></label>
+
+        <input type="radio" name="rating" id="star2" value="2">
+        <label for="star2"><i class="fa-solid fa-star"></i></label>
+
+        <input type="radio" name="rating" id="star1" value="1">
+        <label for="star1"><i class="fa-solid fa-star"></i></label>
+      </div>
+</div>
+
+
+    <div class="form-group">
+      <label>Your Comment</label>
+      <textarea name="comment" placeholder="Write your experience with this course..." required></textarea>
     </div>
+
+    <button type="submit" class="btn-submit">Submit Review</button>
+
+  </form>
+</div>
+<div class="all-comment">
+<h4>All Comment</h4>
+  <div class="comment">
+    
+    <div class="comment-header">
+      <div class="user">
+
+        <img src="../assets/images/testimonials/testi6.png" alt="User" class="user-img" style="width:50px; height:50px; border-radius:50%;">
+        <strong class="user-name">Narimane Mezazga</strong>
+      </div>
+
+      <div class="comment-rating">
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-regular fa-star"></i>
+      </div>
+    </div>
+    <p class="comment-text">
+      Cours très instructif ! Le formateur explique très clairement et les exemples pratiques sont excellents.
+    </p>
+    <span class="comment-date">17 Décembre 2025</span>
+  </div>
+  <div class="comment">
+    
+    <div class="comment-header">
+      <div class="user">
+
+        <img src="../assets/images/testimonials/testi1.png" alt="User" class="user-img" style="width:50px; height:50px; border-radius:50%;">
+        <strong class="user-name">Narimane Mezazga</strong>
+      </div>
+      <div class="comment-rating">
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-regular fa-star"></i>
+        <i class="fa-regular fa-star"></i>
+      </div>
+
+    </div>
+    <p class="comment-text">
+      Cours très instructif ! Le formateur explique très clairement et les exemples pratiques sont excellents.
+    </p>
+    <span class="comment-date">17 Décembre 2025</span>
+  </div>
+</div>
+
+</div>  
+    </div>
+    
+<!-- Testimonials Section -->
 
 </body>
 </html>

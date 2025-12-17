@@ -38,7 +38,12 @@ if (isset($_POST["register_submit"])) {
         } else {
         
             $qr_file = "assets/qrcodes/qr_" . time() . ".png";
-            QRcode::png("Event: $evenement_id, Name: $fullname, Email: $email, Session: $horaire", "../" . $qr_file, QR_ECLEVEL_L, 4);
+QRcode::png(
+  "Event: $evenement_id, Name: $fullname, Email: $email, Session: $horaire",
+  "../" . $qr_file,
+  QR_ECLEVEL_L,
+  4
+);
 
             $stmt = "INSERT INTO inscriptions_evenements (user_id, evenement_id, horaire, note, qr_code) 
                      VALUES ('$user_id', '$evenement_id', '$horaire', '$note', '$qr_file')";

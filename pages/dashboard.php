@@ -6,7 +6,12 @@ exit();
 
 }
 include "config.php";
+$user_id = $_SESSION['user_id'];
+$sql = "SELECT nom, email FROM users WHERE id = $user_id";
+$result = mysqli_query($conn, $sql);
+$user = mysqli_fetch_assoc($result);
 
+$sqlevent = "SELECT * FROM foramtion WHERE id = $user_id";
 
 
 
@@ -101,7 +106,7 @@ mysqli_close($conn);
             <header class="dashboard-header">
                 <div class="header-left">
                     <h1>Dashboard</h1>
-                    <p>Bienvenue, <strong>narimane MEZAZGA</strong></p>
+                    <p>Bienvenue, <strong><?= htmlspecialchars($user['nom']) ?></strong></p>
                 </div>
                 <div class="header-right">
                     <div class="search-box">

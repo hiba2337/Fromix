@@ -2,7 +2,6 @@
 
 <?php 
 session_start();
-include "config.php";
 
 ?>
 
@@ -73,7 +72,7 @@ exit();
     }
 }
 
-mysqli_close($conn);
+// mysqli_close($conn);
 ?>
    <form action="login.php" method="post" autocomplete="off">
     
