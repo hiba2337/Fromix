@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- font awsome -->
+<script src="https://kit.fontawesome.com/f14d152ebc.js" crossorigin="anonymous"></script>
+  <!-- google font -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <!-- font family -->
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- style -->
+   <link rel="stylesheet" href="assets/message.css">
+    <title>Formix Admin Messages</title>
+</head>
+<body>
+    <div class="message">
+       
+<aside class="side-bar">
+  <h3>Formix</h3>
+  <ul>
+    <li>
+      <a href="dashborad.html">
+        <i class="fa-solid fa-gauge-high fa-fw"></i>
+        <span>Dashboard</span>
+      </a>
+    </li>
+
+    <li>
+      <a href="users.html">
+        <i class="fa-solid fa-users fa-fw"></i>
+        <span>Users</span>
+      </a>
+    </li>
+
+    <li>
+      <a href="instructors.html">
+        <i class="fa-solid fa-chalkboard-user fa-fw"></i>
+        <span>Instructors</span>
+      </a>
+    </li>
+
+   
+
+     <li>
+      <a href="orders.html">
+    <i class="fa-solid fa-cart-shopping"></i>
+
+        <span>Orders</span>
+      </a>
+    </li>
+    <li>
+      <a href="Reviews.html">
+<i class="fa-regular fa-star"></i>
+  <span>Reviews</span>
+      </a>
+    </li>
+
+    <li>
+      <a href="messages.html">
+        <i class="fa-solid fa-comments fa-fw"></i>
+        <span>Messages</span>
+      </a>
+    </li>
+
+    <li>
+      <a href="settings.html">
+        <i class="fa-solid fa-gear fa-fw"></i>
+        <span>Settings</span>
+      </a>
+    </li>
+  </ul>
+</aside>
+
+        
+        <div class="content">
+            <header class="admin-header">
+  <div class="search-box">
+    <input type="text" placeholder="Search...">
+    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+  </div>
+
+  <div class="header-right">
+    <button class="notification-btn">
+      <i class="fa-solid fa-bell"></i>
+      <span class="notif-count">3</span>
+    </button>
+    <div class="profile">
+      <img src="../assets/images/testimonials/testi1.png" alt="Profile">
+    </div>
+  </div>
+</header>
+
+
+            <section>
+<div class="main-title">
+    <h2>Messages </h2>
+    <p>Manage contact form submissions and user messages.
+
+
+</p>
+</div>
+<div class="messages-wrapper">
+
+  <!-- Messages List -->
+  <div class="messages-list">
+<button class="btn-card "
+  data-reply="Our support team will review your request and get back to you as soon as possible. If you have any additional questions in the meantime, please feel free to contact us."
+   data-name="John Smith"
+        data-email="john@example.com"
+        data-date="2024-12-15"
+  >
+  
+  <div class="message-card">
+    <div class="msg-header">
+      <h4>John Smith</h4>
+      <span class="badge new">New</span>
+    </div>
+    <p>Course Refund Request</p>
+    <span class="date">2024-12-15</span>
+  </div>
+</button>
+
+<button class="btn-card " 
+  data-reply="Thank you for reaching out to us. We've received your message regarding Technical Issue with Course Videos. Our support team will review your request and get back
+   to you as soon as possible. If you have any additional questions in the meantime, please feel free to contact us."
+    data-name="Sarah Johnson"
+        data-email="Sarah Johnson@example.com"
+        data-date="2024-12-14">
+
+
+  <div class="message-card">
+    <h4>Sarah Johnson</h4>
+    <p>Technical Issue with Course Videos</p>
+    <span class="date">2024-12-14</span>
+  </div>
+</button>
+<button class="btn-card "  
+ data-reply="Thank you for reaching out to us. We've received your message regarding Technical Issue with Course Videos.
+  Our support team will review your request and get back to you as soon as possible. If you have any additional 
+  questions in the meantime, please feel free to contact us."
+   data-name="Mike Davis"
+        data-email="Mike Davis@example.com"
+        data-date="2024-12-13">
+  
+
+  <div class="message-card active">
+    <div class="msg-header">
+      <h4>Mike Davis</h4>
+      <span class="badge new">New</span>
+    </div>
+    <p>Certificate Request</p>
+    <span class="date">2024-12-13</span>
+  </div>
+</button>
+<button class="btn-card "  
+ data-reply="Thank you for reaching out to us. We've received your message regarding Instructor Application. Our support team will review your request and get back to you as soon as possible. 
+ If you have any additional questions in the meantime, please feel free to contact us."
+  data-name="Emma Wilson"
+        data-email="Emma Wilson@example.com"
+        data-date="2024-12-12">
+
+  <div class="message-card">
+    <h4>Emma Wilson</h4>
+    <p>Instructor Application</p>
+    <span class="date">2024-12-12</span>
+  </div>
+
+</button>
+
+  </div>
+
+  <!-- Message Content -->
+  <div class="message-content-box ">
+<i class="fa-solid fa-message"></i>
+
+    <span>Select a message to view details</span>
+
+  </div>
+
+</div>
+
+            </section>
+        </div>
+    </div>
+
+
+
+
+<script>
+const buttons = document.querySelectorAll('.btn-card');
+const box = document.querySelector('.message-content-box');
+
+buttons.forEach(btn => {
+  btn.addEventListener('click', () => {
+
+    box.innerHTML = '';
+
+    // إنشاء العنصر للعرض
+    const messageDiv = document.createElement('div');
+    messageDiv.className = 'message-card no-border';
+
+    // إضافة البيانات من data attributes
+    const nameElem = document.createElement('h4');
+    nameElem.innerText = ` ${btn.dataset.name}`;
+
+    const emailElem = document.createElement('p');
+    emailElem.innerText = `Email: ${btn.dataset.email}`;
+
+    const dateElem = document.createElement('span');
+    dateElem.className = 'date';
+    dateElem.innerText = `Date: ${btn.dataset.date}`;
+
+    messageDiv.appendChild(nameElem);
+    messageDiv.appendChild(emailElem);
+    messageDiv.appendChild(dateElem);
+
+    box.appendChild(messageDiv);
+
+   
+    const replyDiv = document.createElement('div');
+    replyDiv.className = 'admin-reply';
+    replyDiv.innerHTML = `
+      <p>${btn.dataset.reply}</p>
+      <div class="reply-actions">
+        <button class="mark-read"><i class="fa-solid fa-message"></i> Mark as read</button>
+        <button class="delete"><i class="fa-solid fa-trash"></i> Delete</button>
+      </div>
+    `;
+    box.appendChild(replyDiv);
+
+    box.classList.add('active');
+  });
+});
+
+</script>
+
+
+
+   
+
+</body>
+</html>

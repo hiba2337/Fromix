@@ -7,7 +7,52 @@ exit();
 
 }
 include "config.php";
+$where = [];
 
+if (!empty($_GET['category'])) {
+    $category = mysqli_real_escape_string($conn, $_GET['category']);
+    $where[] = "f.categorie = '$category'";
+}
+
+if (!empty($_GET['level'])) {
+    $level = mysqli_real_escape_string($conn, $_GET['level']);
+    $where[] = "f.level = '$level'";
+}
+
+if (!empty($_GET['duration'])) {
+    if ($_GET['duration'] == 'less4') {
+        $where[] = "f.duration < 4";
+    } elseif ($_GET['duration'] == 'more8') {
+        $where[] = "f.duration > 8";
+    } else {
+        $d = (int) $_GET['duration'];
+        $where[] = "f.duration = $d";
+    }
+}
+
+if (!empty($_GET['price'])) {
+    if ($_GET['price'] == 'free') {
+        $where[] = "f.price = 0";
+    }
+}
+
+/* ================= SQL ================= */
+$sql = "
+SELECT 
+    f.*,
+    ROUND(AVG(fr.rating),1) AS avg_rating
+FROM formations f
+LEFT JOIN formation_ratings fr 
+    ON f.id = fr.formation_id
+";
+
+if (!empty($where)) {
+    $sql .= " WHERE " . implode(" AND ", $where);
+}
+
+$sql .= " GROUP BY f.id";
+
+$result = mysqli_query($conn, $sql);
 
 ?>
 
@@ -103,7 +148,7 @@ include "config.php";
      </div>
      
     <div class="filter-box">
-  <form class="filter-course">
+  <form class="filter-course" method="get" action="formation.php">
 
     <div class="filter-item">
       <i class="fa-solid fa-layer-group"></i>
@@ -115,6 +160,7 @@ include "config.php";
         <option value="security">Cyber Security</option>
         <option value="Marketing">Marketing</option>
         <option value="Design">Design</option>
+        <option value="Artificial Intelligence">AI</option>
       </select>
     </div>
 
@@ -158,197 +204,68 @@ include "config.php";
 
            </header> 
            <div class="content">
-<div class="box ">
-  <div class="image">
+<?php while ($row = mysqli_fetch_assoc($result)) : ?>
 
-    <img src="../assets/images/courses/course01.png" alt="">
-  </div>
-  <div class="info">
-    <h3 class="title">Introduction to Artificial Intelligence</h3>
-    <p>Explore how machines learn, think, and make decisions using real-world AI models.
-     
-    </p>
-    <p class="level"><strong>Level:</strong> Intermediate</p>
-    <p class="duration"><strong>Duration:</strong> 3 Weeks</p>
-  </div>
-  <div class="course-footer">
-    <a href="fromation-details.php">View Details</a>
-   <div class="rating">
-    <div class="rating-value">
-
-      <span class="stars">
-        <i class="fa-solid fa-star"></i>
-        <i class="fa-solid fa-star"></i>
-        <i class="fa-solid fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-      </span>
-      <span class="star-value">3.6</span>
-   
+<div class="box">
+    <div class="image">
+        <img src="../assets/images/courses/<?php echo $row['image']; ?>" alt="">
     </div>
-    <div class="price">12000DA</div>
-     
-  </div>
-   
-</div>
-   
-</div>
 
-<div class="box ">
-  <img src="../assets/images/courses/course03.png" alt="">
-  <div class="info">
-    <h3 class="title">Digital Marketing Strategy</h3>
-    <p>Discover how to promote brands effectively using SEO, content marketing, and social media.</p>
-    <p class="level"><strong>Level:</strong> All Levels</p>
-    <p class="duration"><strong>Duration:</strong> 6 Weeks</p>
-  </div>
-  <div class="course-footer">
-      <a href="fromation-details.php">View Details</a>
-   
-      <div class="rating">
-        <div class="rating-value">
+    <div class="info">
+        <h3 class="title"><?php echo $row['titre']; ?></h3>
+        <p><?php echo $row['description']; ?></p>
 
-          <span class="stars">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star-half-stroke"></i>
-            <i class="fa-regular fa-star"></i>
-            <i class="fa-regular fa-star"></i>
-          </span>
-          <span class="star-value">2.8</span>
+        <p class="level">
+            <strong>Level:</strong> <?php echo $row['level']; ?>
+        </p>
+
+        <p class="duration">
+            <strong>Duration:</strong> <?php echo $row['duration']; ?> Weeks
+        </p>
+    </div>
+
+    <div class="course-footer">
+        <a href="fromation-details.php?id=<?php echo $row['id']; ?>"  target="_blank">
+            View Details
+        </a>
+
+        <div class="rating">
+            <div class="rating-value">
+                <span class="stars">
+                    <?php
+                    $rating = $row['avg_rating'] ?? 0;
+                    $stars = round($rating);
+
+                    for ($i = 1; $i <= 5; $i++) {
+                        if ($i <= $stars) {
+                            echo '<i class="fa-solid fa-star"></i>';
+                        } else {
+                            echo '<i class="fa-regular fa-star"></i>';
+                        }
+                    }
+                    ?>
+                </span>
+                <span class="star-value">
+                    <?php echo $rating > 0 ? $rating : 'No rating'; ?>
+                </span>
+            </div>
+
+            <div class="price">
+                <?php echo $row['price']; ?> DA
+            </div>
         </div>
-         <div class="price">20000DA</div>
-      </div>
-  </div>
+    </div>
 </div>
 
-<!-- 
-<div class="box ">
-  <img src="../assets/images/courses/course04.png" alt="">
-  <div class="info">
-    <h3 class="title">Public Speaking and Communication Skills</h3>
-    <p>Overcome stage fear and improve your verbal and non-verbal communication.</p>
-    <p class="level"><strong>Level:</strong> All Levels</p>
-    <p class="duration"><strong>Duration:</strong> 4 Weeks</p>
-  </div>
-  <div class="course-footer">
-      <a href="#">View Details</a>
-      <div class="rating">
-        <div class="rating-value">
+<?php endwhile; ?>
 
-          <span class="stars">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star-half-stroke"></i>
-            <i class="fa-regular fa-star"></i>
-          </span>
-          <span class="star-value">3.9</span>
-        </div>
-          <div class="price">5000DA</div>
+
+
       </div>
-  
-  </div>
-</div> -->
-
-
- <!-- <div class="box"> 
-  <img src="../assets/images/courses/course05.png" alt="">
-  <div class="info">
-    <h3 class="title">Entrepreneurship & Business Innovation</h3>
-    <p>Turn your ideas into reality by learning the fundamentals of startup creation and innovation.</p>
-    <p class="level"><strong>Level:</strong> Intermediate</p>
-    <p class="duration"><strong>Duration:</strong> 7 Weeks</p>
-  </div>
-  <div class="course-footer">
-    <a href="#">View Details</a>
  
-    <div class="rating">
-      <div class="rating-value">
-        <span class="stars">
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-regular fa-star"></i>
-        </span>
-        <span class="star-value">4.5</span>
-  
-  </div>
-        <div class="price">15000DA</div>
-    </div>
-  </div>
-</div> -->
 
 
-<!-- <div class="box ">
-  <img src="../assets/images/courses/course06.png" alt="">
-  <div class="info">
-    <h3 class="title">Personal Development and Productivity</h3>
-    <p>Learn how to manage your time, stay focused, and achieve your goals efficiently.</p>
-    <p class="level"><strong>Level:</strong> All Levels</p>
-    <p class="duration"><strong>Duration:</strong> 4 Weeks</p>
-  </div>
-  <div class="course-footer">
-    <a href="#">View Details</a>
 
-    <div class="rating">
-      <div class="rating-value">
-
-        <span class="stars">
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-regular fa-star"></i>
-          <i class="fa-regular fa-star"></i>
-        </span>
-        <span class="star-value">3.5</span>
-      </div>
-        <div class="price"> 5500DA</div>
-    </div>
-  </div>
-</div> -->
-
-<!-- <div class="box ">
-  <div class="image">
-
-    <img src="../assets/images/courses/course02.png" alt="">
-  </div>
-  <div class="info">
-    <h3 class="title">Graphic Design Essentials</h3>
-    <p>Develop your creativity and learn to design with Photoshop and Illustrator. Understand layout.</p>
-    <p class="level"><strong>Level:</strong> Beginner</p>
-    <p class="duration"><strong>Duration:</strong> 5 Weeks</p>
-  </div>
-  <div class="course-footer">
-  <a href="#">View Details</a>
-   
-  <div class="rating">
-    <div class="rating-value">
-
-      <span class="stars">
-        <i class="fa-solid fa-star"></i>
-        <i class="fa-solid fa-star"></i>
-        <i class="fa-solid fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-      </span>
-      <span class="star-value">3.6</span>
-    </div>
-
-    <div class="price">18000DA</div>
-  </div>
-  </div>
-</div>  -->
-
-
-    <!-- </div>
-    <div class="number-pages">
-      <a href="#" class="left">></a>
-      <div class="one">1</div>
-      <div class="two">2</div>
-      <div class="three">3</div>
-    </div> -->
 </main>
    </div> 
 

@@ -1,8 +1,7 @@
-
-
-<?php 
+<?php
 session_start();
-
+require_once "config.php";
+$error_msg = "";
 ?>
 
 <!--login.html-->
@@ -39,7 +38,7 @@ if (isset($_POST["send"])){
 
     $email = $_POST["email"];
     $pass  = $_POST["password"];
-    require_once "config.php";
+   
 
   
     if (empty($email) || empty($pass)) {

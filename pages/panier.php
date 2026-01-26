@@ -1,344 +1,117 @@
-<?php 
-include "config.php";
+<?php
 session_start();
+include "config.php";
+
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit();
+}
+
+$user_id = $_SESSION['user_id'];
+
+if (isset($_GET['remove_id'])) {
+    $remove_id = intval($_GET['remove_id']);
+    mysqli_query($conn, "DELETE FROM panier WHERE id=$remove_id AND user_id=$user_id");
+    header("Location: panier.php");
+    exit();
+}
+
+if (isset($_GET['clear_cart'])) {
+    mysqli_query($conn, "DELETE FROM panier WHERE user_id=$user_id");
+    header("Location: panier.php");
+    exit();
+}
+
+$sql = "
+SELECT 
+    p.id AS panier_id,
+    f.titre,
+    f.price,
+    f.image,
+    f.duration,
+    f.level,
+    fo.nom AS instructeur
+FROM panier p
+JOIN formations f ON p.formation_id = f.id
+JOIN formateurs fo ON f.id_formateur = fo.id
+WHERE p.user_id = $user_id
+";
+
+$result = mysqli_query($conn, $sql);
+
+$cart_items = [];
+$total = 0;
+
+while ($row = mysqli_fetch_assoc($result)) {
+    $cart_items[] = $row;
+    $total += $row['price'];
+}
+
+$nombre_elements = count($cart_items);
+$tax = $total * 0.19;
+$grand_total = $total + $tax;
 ?>
+
 
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- font awsome -->
-    <script src="https://kit.fontawesome.com/f14d152ebc.js" crossorigin="anonymous"></script>
-    <!-- google font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <!-- font family -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    
-
-    <!-- CSS Files -->
+    <title>Formix | Cart</title>
     <link rel="stylesheet" href="../assets/css/pages/panier.css">
-    <title>Formix  |  Cart</title>
 </head>
 <body>
+
 <div class="cart">
-
-    <div class="side-bar">
-     <img src="../assets/images/logo/sidebar.png" alt="" class="logo">
-      <ul>
-          <li>
-      <a  href="dashboard.php">
-        <i class="fa-regular fa-chart-bar fa-fw"></i>
-        <span>Dashboard</span>
-      </a>
-         </li>
-   <li>
-      <a  href="formation.php">
-        <i class="fa-solid fa-graduation-cap fa-fw"></i>
-        <span>Courses</span>
-      </a>
-   </li>
-             <li>
-                 <a  href="eventement.php">
-       <i class="fa-solid fa-calendar-days"></i>
-        <span>Events</span>
-      </a>
-             </li>
-    <li>
-                 <a  href="panier.php">
-      <i class="fa-solid fa-cart-shopping"></i>
-        <span>Cart</span>
-      </a>
-   </li>
-          <li>
-                 <a  href="Blog.php">
-     <i class="fa-solid fa-pen-nib"></i>
-
-        <span>Blog</span>
-      </a>
-          </li>
-         
-               <li>
-                 <a  href="contact.php">
-  <i class="fa-solid fa-phone"></i>
-
-
-        <span>Contact</span>
-      </a>
-               </li>
-         
-          <li>
-                 <a  href=".logout.php">
-<i class="fa-solid fa-right-from-bracket"></i>
-
-
-
-        <span>Log Out</span>
-      </a>
-          </li>
-         
-          
-      </ul>
-  </div>
-
-
 <main class="main-content">
 
+<h2>Cart (<?= $nombre_elements ?>)</h2>
 
-<!-- Page Title -->
-<div class="head">
-<div class="main-title">
-  <h2>Cart</h2>
+<?php if ($nombre_elements == 0): ?>
+
+    <div class="empty-cart">
+        <h2>Votre panier est vide</h2>
+        <a href="formation.php">Explorer les formations</a>
+    </div>
+
+<?php else: ?>
+
+<div class="cart-items">
+
+<?php foreach ($cart_items as $item): ?>
+    <div class="cart-item">
+
+        <img src="../uploads/<?= $item['image'] ?>" width="120">
+
+        <div>
+            <h3><?= $item['titre'] ?></h3>
+            <p>Par <?= $item['instructeur'] ?></p>
+            <p><?= $item['duration'] ?> h | <?= $item['level'] ?></p>
+        </div>
+
+        <div>
+            <strong><?= number_format($item['price'],0) ?> DA</strong>
+            <br>
+            <a href="panier.php?remove_id=<?= $item['panier_id'] ?>">🗑 Supprimer</a>
+        </div>
+
+    </div>
+<?php endforeach; ?>
+
 </div>
 
-  
-   </div>
+<div class="order-summary">
+    <p>Sous-total : <?= number_format($total,0) ?> DA</p>
+    <p>TVA (19%) : <?= number_format($tax,0) ?> DA</p>
+    <h3>Total : <?= number_format($grand_total,0) ?> DA</h3>
 
-<!-- Cart Content -->
-<section class="cart-section">
-  <div class="container">
-      <div class="cart-layout">
-          <!-- Cart Items -->
-          <div class="cart-items-container">
-              <div class="cart-header">
-                  <h2>Articles (<span class="items-count">3</span>)</h2>
-                  <button class="clear-cart-btn" onclick="clearCart()">
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                          <path d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/>
-                      </svg>
-                      Vider le panier
-                  </button>
-              </div>
+    <a href="panier.php?clear_cart=1">Vider le panier</a>
+    <br><br>
+    <a href="paiement.php">Procéder au paiement</a>
+</div>
 
-              <div class="cart-items" id="cartItemsContainer">
-                  <!-- Cart Item 1 -->
-                  <div class="cart-item" data-id="1" data-price="15000">
-                      <div class="item-image">
-                          <img src="../assets/images/courses/web dev-courses.png" alt="Formation Web">
-                      </div>
-                      <div class="item-details">
-                          <h3>Développement Web Full Stack</h3>
-                          <p class="item-instructor">Par Ahmed </p>
-                          <div class="item-meta">
-                              <span class="duration">
-                                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                      <circle cx="12" cy="12" r="10"/>
-                                      <path d="M12 6v6l4 2"/>
-                                  </svg>
-                                  40 heures
-                              </span>
-                              <span class="level">
-                                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                      <path d="M2 10h6.5M2 14h6.5M18 14v7M14 14v7M10 14v7M10 6v1M14 3v4M18 1v6"/>
-                                  </svg>
-                                  Débutant
-                              </span>
-                          </div>
-                      </div>
-                      <div class="item-actions">
-                          <div class="item-price">15,000 DA</div>
+<?php endif; ?>
 
-                          <button class="remove-btn" onclick="removeItem(1)">
-                              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                  <path d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/>
-                                  <line x1="10" y1="11" x2="10" y2="17"/>
-                                  <line x1="14" y1="11" x2="14" y2="17"/>
-                              </svg>
-                          </button>
-                      </div>
-                  </div>
-
-                  <!-- Cart Item 2 -->
-                  <div class="cart-item" data-id="2" data-price="12000">
-                      <div class="item-image">
-                          <img src="../assets/images/courses/course02.png" alt="Design Graphique">
-                      </div>
-                      <div class="item-details">
-                          <h3>Design Graphique & UI/UX</h3>
-                          <p class="item-instructor">Par Sara Mohamed</p>
-                          <div class="item-meta">
-                              <span class="duration">
-                                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                      <circle cx="12" cy="12" r="10"/>
-                                      <path d="M12 6v6l4 2"/>
-                                  </svg>
-                                  35 heures
-                              </span>
-                              <span class="level">
-                                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                      <path d="M2 10h6.5M2 14h6.5M18 14v7M14 14v7M10 14v7M10 6v1M14 3v4M18 1v6"/>
-                                  </svg>
-                                  Intermédiaire
-                              </span>
-                          </div>
-                      </div>
-                      <div class="item-actions">
-                          <div class="item-price">12,000 DA</div>
-
-                          <button class="remove-btn" onclick="removeItem(2)">
-                              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                  <path d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/>
-                                  <line x1="10" y1="11" x2="10" y2="17"/>
-                                  <line x1="14" y1="11" x2="14" y2="17"/>
-                              </svg>
-                          </button>
-                      </div>
-                  </div>
-
-                  <!-- Cart Item 3 -->
-                  <div class="cart-item" data-id="3" data-price="10000">
-                      <div class="item-image">
-                          <img src="../assets/images/courses/course03.png" alt="Marketing Digital">
-                      </div>
-                      <div class="item-details">
-                          <h3>Marketing Digital & Réseaux Sociaux</h3>
-                          <p class="item-instructor">Par Ali Hassan</p>
-                          <div class="item-meta">
-                              <span class="duration">
-                                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                      <circle cx="12" cy="12" r="10"/>
-                                      <path d="M12 6v6l4 2"/>
-                                  </svg>
-                                  28 heures
-                              </span>
-                              <span class="level">
-                                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                      <path d="M2 10h6.5M2 14h6.5M18 14v7M14 14v7M10 14v7M10 6v1M14 3v4M18 1v6"/>
-                                  </svg>
-                                  Débutant
-                              </span>
-                          </div>
-                      </div>
-                      <div class="item-actions">
-                          <div class="item-price">10,000 DA</div>
-
-                          <button class="remove-btn" onclick="removeItem(3)">
-                              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                  <path d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/>
-                                  <line x1="10" y1="11" x2="10" y2="17"/>
-                                  <line x1="14" y1="11" x2="14" y2="17"/>
-                              </svg>
-                          </button>
-                      </div>
-                  </div>
-              </div>
-
-              <!-- Empty State (hidden by default) -->
-              <div class="empty-cart" id="emptyCart" style="display: none;">
-                  <div class="empty-icon">
-                      <svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-                          <circle cx="9" cy="21" r="1"/>
-                          <circle cx="20" cy="21" r="1"/>
-                          <path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/>
-                      </svg>
-                  </div>
-                  <h2>Votre panier est vide</h2>
-                  <p>Découvrez nos formations et commencez votre apprentissage aujourd'hui!</p>
-                  <a href="formations.html" class="btn-primary">Explorer les formations</a>
-              </div>
-          </div>
-
-          <!-- Order Summary -->
-          <div class="order-summary">
-              <h2>Résumé de la commande</h2>
-              
-              <div class="promo-code-section">
-                  <label for="promoCode">Code promo</label>
-                  <div class="promo-input-group">
-                      <input type="text" id="promoCode" placeholder="Entrez votre code">
-                      <button class="apply-btn" onclick="applyPromo()">Appliquer</button>
-                  </div>
-                  <p class="promo-message" id="promoMessage"></p>
-              </div>
-
-              <div class="summary-details">
-                  <div class="summary-row">
-                      <span>Sous-total</span>
-                      <span id="subtotal">37,000 DA</span>
-                  </div>
-                  <div class="summary-row discount-row" id="discountRow" style="display: none;">
-                      <span>Réduction</span>
-                      <span class="discount" id="discount">0 DA</span>
-                  </div>
-                  <div class="summary-row">
-                      <span>TVA (19%)</span>
-                      <span id="tax">7,030 DA</span>
-                  </div>
-                  <div class="summary-total">
-                      <span>Total</span>
-                      <span id="total">44,030 DA</span>
-                  </div>
-              </div>
-
-                  <a href="../pages/paiement.html" class="checkout-btn" onclick="proceedToCheckout()">
-
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-                      <path d="M7 11V7a5 5 0 0110 0v4"/>
-                  </svg>
-                  Procéder au paiement
-              </a>
-
-              <a href="../pages/formation.html" class="continue-shopping">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <line x1="19" y1="12" x2="5" y2="12"/>
-                      <polyline points="12 19 5 12 12 5"/>
-                  </svg>
-                  Continuer mes achats
-              </a>
-
-              <div class="security-badges">
-                  <div class="badge">
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-                          <path d="M7 11V7a5 5 0 0110 0v4"/>
-                      </svg>
-                      Paiement sécurisé
-                  </div>
-                  <div class="badge">
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                      </svg>
-                      Garantie 30 jours
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
-</section>
-
-<!-- Recommended Courses -->
-<section class="recommended-section">
-  <div class="container">
-      <h2>Formations recommandées</h2>
-      <div class="courses-grid">
-          <div class="course-card">
-              <img src="../assets/images/courses/web dev-courses.png" alt="Course">
-              <div class="course-info">
-                  <h3>Python pour la Data Science</h3>
-                  <p class="price">18,000 DA</p>
-                  <button class="add-to-cart-btn">Ajouter au panier</button>
-              </div>
-          </div>
-          <div class="course-card">
-              <img src="../assets/images/courses/event07.png" alt="Course">
-              <div class="course-info">
-                  <h3>Cybersécurité Fondamentale</h3>
-                  <p class="price">16,000 DA</p>
-                  <button class="add-to-cart-btn">Ajouter au panier</button>
-              </div>
-          </div>
-          <div class="course-card">
-              <img src="../assets/images/courses/course05.png" alt="Course">
-              <div class="course-info">
-                  <h3>Business Intelligence</h3>
-                  <p class="price">14,000 DA</p>
-                  <button class="add-to-cart-btn">Ajouter au panier</button>
-              </div>
-          </div>
-      </div>
-  </div>
-</section>
 </main>
 </div>
 

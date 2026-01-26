@@ -1,0 +1,22 @@
+{
+    "sourceFile": "config.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1764872408659,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1764872538961,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <?php\n $host = \"localhost\";\n-$user = \"root\";      // مستخدم XAMPP الافتراضي\n-$pass = \"\";          // فارغ\n+$user = \"root\";      \n+$pass = \"\";        \n $db   = \"users_db\";\n \n $conn = mysqli_connect($host, $user, $pass, $db);\n \n"
+                }
+            ],
+            "date": 1764872408659,
+            "name": "Commit-0",
+            "content": "<?php\n$host = \"localhost\";\n$user = \"root\";      // مستخدم XAMPP الافتراضي\n$pass = \"\";          // فارغ\n$db   = \"users_db\";\n\n$conn = mysqli_connect($host, $user, $pass, $db);\n\nif (!$conn) {\n    die(\"Connection failed: \" . mysqli_connect_error());\n}\n?>\n"
+        }
+    ]
+}

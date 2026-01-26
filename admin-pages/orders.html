@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- font awsome -->
+<script src="https://kit.fontawesome.com/f14d152ebc.js" crossorigin="anonymous"></script>
+  <!-- google font -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <!-- font family -->
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- style -->
+   <link rel="stylesheet" href="assets/orders.css">
+    <title>Formix Admin Reviews</title>
+</head>
+<body>
+    <div class="orders">
+       
+<aside class="side-bar">
+  <h3>Formix</h3>
+  <ul>
+    <li>
+      <a href="dashborad.html">
+        <i class="fa-solid fa-gauge-high fa-fw"></i>
+        <span>Dashboard</span>
+      </a>
+    </li>
+
+    <li>
+      <a href="users.html">
+        <i class="fa-solid fa-users fa-fw"></i>
+        <span>Users</span>
+      </a>
+    </li>
+
+    <li>
+      <a href="instructors.html">
+        <i class="fa-solid fa-chalkboard-user fa-fw"></i>
+        <span>Instructors</span>
+      </a>
+    </li>
+
+    
+
+    <li>
+      <a href="orders.html">
+    <i class="fa-solid fa-cart-shopping"></i>
+
+        <span>Orders</span>
+      </a>
+    </li>
+    <li>
+      <a href="Reviews.html">
+<i class="fa-regular fa-star"></i>
+  <span>Reviews</span>
+      </a>
+    </li>
+
+    <li>
+      <a href="messages.html">
+        <i class="fa-solid fa-comments fa-fw"></i>
+        <span>Messages</span>
+      </a>
+    </li>
+
+    <li>
+      <a href="settings.html">
+        <i class="fa-solid fa-gear fa-fw"></i>
+        <span>Settings</span>
+      </a>
+    </li>
+  </ul>
+</aside>
+
+        
+        <div class="content">
+            <header class="admin-header">
+  <div class="search-box">
+    <input type="text" placeholder="Search...">
+    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+  </div>
+
+  <div class="header-right">
+    <button class="notification-btn">
+      <i class="fa-solid fa-bell"></i>
+      <span class="notif-count">3</span>
+    </button>
+    <div class="profile">
+      <img src="../assets/images/testimonials/testi1.png" alt="Profile">
+    </div>
+  </div>
+</header>
+
+
+            <section>
+<div class="main-title">
+    <h2>Orders & Payments </h2>
+    <p>Track all purchases and payment transactions.</p>
+</div>
+
+
+<div class="status">
+  <span class="all">All Orders</span>
+<span class="Paid">Paid (3)</span>
+<span class="pending">Pending (2)</span>
+<span class="failed">Failed (1)</span>
+</div>
+<table class="admin-table">
+    <thead>
+        <tr>
+            <th>Order ID</th>
+            <th>User</th>
+            <th>Course</th>
+            <th>Amount</th>
+            <th>Status</th>
+            <th>Date</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="id">#ORD -1023</td>
+            <td>John Doe</td>
+            <td class="course">React for Beginners</td>
+            <td class="amount">1200 DA</td>
+            <td><span class="stat paid">Paid</span></td>
+            <td class="date">2024-12-15</td>
+            <td class="actions-menu">
+    
+        <i class="fa-solid fa-ellipsis"></i>
+
+        <div class="dropdown">
+            <button>
+                <i class="fa-regular fa-square-check"></i> Approve
+            </button>
+            <button class="delete">
+                <i class="fa-solid fa-trash"></i> Delete
+            </button>
+        </div>
+    
+           </td>
+        </tr>
+
+        <tr>
+            <td class="id">#ORD-1024</td>
+            <td>Hiba ould Kherroubi</td>
+            <td class="course">PHP Masterclass</td>
+            <td class="amount">950 DA</td>
+            <td><span class="stat failed">Falied</span></td>
+            <td class="date">2024-12-16</td>
+            <td class="actions-menu">
+    
+        <i class="fa-solid fa-ellipsis"></i>
+
+        <div class="dropdown">
+            <button>
+                <i class="fa-regular fa-square-check"></i> Approve
+            </button>
+            <button class="delete">
+                <i class="fa-solid fa-trash"></i> Delete
+            </button>
+        </div>
+    
+           </td>
+        </tr>
+        <tr>
+            <td class="id">#ORD-1028</td>
+            <td>Mike Davis</td>
+            <td class="course">	Advanced Python</td>
+            <td class="amount">1800 DA</td>
+            <td><span class="stat paid">Paid</span></td>
+            <td class="date">2024-12-18</td>
+            <td class="actions-menu">
+    
+        <i class="fa-solid fa-ellipsis"></i>
+
+        <div class="dropdown">
+            <button>
+                <i class="fa-regular fa-square-check"></i> Approve
+            </button>
+            <button class="delete">
+                <i class="fa-solid fa-trash"></i> Delete
+            </button>
+        </div>
+    
+           </td>
+        </tr>
+        <tr>
+            <td class="id">#ORD-1048</td>
+            <td>Sarah Ali</td>
+            <td class="course">PHP Masterclass</td>
+            <td class="amount">950 DA</td>
+            <td><span class="stat pending">Pending</span></td>
+            <td class="date">2024-12-21</td>
+            <td class="actions-menu">
+   
+        <i class="fa-solid fa-ellipsis"></i>
+
+        <div class="dropdown">
+            <button>
+                <i class="fa-regular fa-square-check"></i> Approve
+            </button>
+            <button class="delete">
+                <i class="fa-solid fa-trash"></i> Delete
+            </button>
+        </div>
+   
+           </td>
+        </tr>
+        <tr>
+            <td class="id">#ORD-1048</td>
+            <td>Lisa Anderson</td>
+            <td class="course">		UI/UX Design Fundamentals</td>
+            <td class="amount">850 DA</td>
+            <td><span class="stat pending">Pending</span></td>
+            <td class="date">2024-12-23</td>
+            <td class="actions-menu">
+   
+        <i class="fa-solid fa-ellipsis"></i>
+
+        <div class="dropdown">
+            <button>
+                <i class="fa-regular fa-square-check"></i> Approve
+            </button>
+            <button class="delete">
+                <i class="fa-solid fa-trash"></i> Delete
+            </button>
+        </div>
+    
+            </td>
+
+        </tr>
+    </tbody>
+</table>
+
+            </section>
+        </div>
+    </div>
+</body>
+</html>

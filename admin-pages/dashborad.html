@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- font awsome -->
+<script src="https://kit.fontawesome.com/f14d152ebc.js" crossorigin="anonymous"></script>
+  <!-- google font -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <!-- font family -->
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- style -->
+   <link rel="stylesheet" href="assets/dashborad.css">
+    <title>Formix Dashboard</title>
+</head>
+<body>
+    <div class="instructors">
+       
+<aside class="side-bar">
+  <h3>Formix</h3>
+  <ul>
+    <li>
+      <a href="dashborad.html">
+        <i class="fa-solid fa-gauge-high fa-fw"></i>
+        <span>Dashboard</span>
+      </a>
+    </li>
+
+    <li>
+      <a href="users.html">
+        <i class="fa-solid fa-users fa-fw"></i>
+        <span>Users</span>
+      </a>
+    </li>
+
+    <li>
+      <a href="instructors.html">
+        <i class="fa-solid fa-chalkboard-user fa-fw"></i>
+        <span>Instructors</span>
+      </a>
+    </li>
+
+    
+    <li>
+      <a href="orders.html">
+    <i class="fa-solid fa-cart-shopping"></i>
+
+        <span>Orders</span>
+      </a>
+    </li>
+    <li>
+      <a href="Reviews.html">
+<i class="fa-regular fa-star"></i>
+  <span>Reviews</span>
+      </a>
+    </li>
+
+    <li>
+      <a href="messages.html">
+        <i class="fa-solid fa-comments fa-fw"></i>
+        <span>Messages</span>
+      </a>
+    </li>
+
+    <li>
+      <a href="settings.html">
+        <i class="fa-solid fa-gear fa-fw"></i>
+        <span>Settings</span>
+      </a>
+    </li>
+  </ul>
+</aside>
+
+        
+        <div class="content">
+            <header class="admin-header">
+  <div class="search-box">
+    <input type="text" placeholder="Search...">
+    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+  </div>
+
+  <div class="header-right">
+    <button class="notification-btn">
+      <i class="fa-solid fa-bell"></i>
+      <span class="notif-count">3</span>
+    </button>
+    <div class="profile">
+      <img src="../assets/images/testimonials/testi1.png" alt="Profile">
+    </div>
+  </div>
+</header>
+
+
+  <main class="main">
+
+ <div class="main-title">
+    <h2>dashborad</h2>
+    <p>Manage contact form submissions and user messages.
+
+
+</p>
+</div>
+
+    <section class="cards">
+      <div class="card">
+        <p>Revenue</p>
+        <h3 class="counter" data-value="45231">0</h3>
+        <span class="green">+12.5%</span>
+      </div>
+      <div class="card">
+        <p>Students</p>
+        <h3 class="counter" data-value="2453">0</h3>
+        <span class="green">+8.2%</span>
+      </div>
+      <div class="card">
+        <p>Courses</p>
+        <h3 class="counter" data-value="89">0</h3>
+        <span class="green">+3 new</span>
+      </div>
+      <div class="card">
+        <p>Instructors</p>
+        <h3 class="counter" data-value="142">0</h3>
+        <span class="green">+1 this week</span>
+      </div>
+    </section>
+
+    <section class="bottom">
+      <div class="chart">
+        <h4>Revenue Growth</h4>
+        <canvas id="barChart"></canvas>
+      </div>
+
+      <div class="activity">
+        <h4>Platform Pulse</h4>
+        <ul>
+          <li>New user registered: Sarah Smith</li>
+          <li>New order #1234</li>
+          <li>Course updated: Advanced Python</li>
+          <li>New 5-star review</li>
+          <li>New instructor application</li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+           
+        </div>
+    </div>
+    <script>/* =========================
+   PAGE LOADING ANIMATION
+========================= */
+window.addEventListener("load", () => {
+  const loader = document.getElementById("loader");
+  setTimeout(() => {
+    loader.classList.add("hide");
+  }, 800);
+});
+
+
+/* =========================
+   COUNTER ON HOVER
+========================= */
+const counters = document.querySelectorAll(".counter");
+
+counters.forEach(counter => {
+  let started = false;
+
+  counter.closest(".card").addEventListener("mouseenter", () => {
+    if (started) return;
+    started = true;
+
+    const target = +counter.dataset.value;
+    let current = 0;
+    const step = Math.ceil(target / 50);
+
+    const interval = setInterval(() => {
+      current += step;
+      if (current >= target) {
+        counter.textContent = target;
+        clearInterval(interval);
+      } else {
+        counter.textContent = current;
+      }
+    }, 20);
+  });
+});
+
+
+/* =========================
+   BAR CHART WITH MONTHS
+   + HOVER TOOLTIP
+========================= */
+const canvas = document.getElementById("barChart");
+const ctx = canvas.getContext("2d");
+
+canvas.width = 700;
+canvas.height = 300;
+
+const data = [40, 30, 50, 28, 20, 25, 35, 42, 48, 55, 62, 70];
+const months = [
+  "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+];
+
+const barWidth = 35;
+const gap = 20;
+const startX = 40;
+const baseY = canvas.height - 40;
+
+let bars = [];
+
+/* رسم الأعمدة + الشهور */
+function drawChart() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  bars = [];
+
+  data.forEach((value, index) => {
+    const x = startX + index * (barWidth + gap);
+    const height = value * 3;
+    const y = baseY - height;
+
+    // العمود
+    ctx.fillStyle = "#6366f1";
+    ctx.fillRect(x, y, barWidth, height);
+
+    // حفظ مكان العمود (للـ hover)
+    bars.push({
+      x,
+      y,
+      width: barWidth,
+      height,
+      value,
+      month: months[index]
+    });
+
+    // اسم الشهر
+    ctx.fillStyle = "#555";
+    ctx.font = "12px Arial";
+    ctx.textAlign = "center";
+    ctx.fillText(months[index], x + barWidth / 2, baseY + 15);
+  });
+}
+
+drawChart();
+
+/* Hover على الأعمدة */
+canvas.addEventListener("mousemove", (e) => {
+  const rect = canvas.getBoundingClientRect();
+  const mouseX = e.clientX - rect.left;
+  const mouseY = e.clientY - rect.top;
+
+  drawChart();
+
+  bars.forEach(bar => {
+    if (
+      mouseX >= bar.x &&
+      mouseX <= bar.x + bar.width &&
+      mouseY >= bar.y &&
+      mouseY <= bar.y + bar.height
+    ) {
+      // تمييز العمود
+      ctx.fillStyle = "#4f46e5";
+      ctx.fillRect(bar.x, bar.y, bar.width, bar.height);
+
+      // Tooltip
+      ctx.fillStyle = "#111";
+      ctx.fillRect(bar.x - 10, bar.y - 40, 110, 30);
+
+      ctx.fillStyle = "#fff";
+      ctx.font = "12px Arial";
+      ctx.textAlign = "left";
+      ctx.fillText(
+        `${bar.month} : ${bar.value}`,
+        bar.x - 5,
+        bar.y - 20
+      );
+    }
+  });
+});
+
+canvas.addEventListener("mouseleave", drawChart);
+</script>
+</body>
+
+</html>

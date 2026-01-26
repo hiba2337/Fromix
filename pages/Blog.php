@@ -142,7 +142,7 @@ if(isset($_POST["Subs"])){
         <div class="card-content">
           <h3><?php echo $row['titre']; ?></h3>
           
-            <a href="#" class="btn"> Learn More </a>
+            <a href="blog-details.php" class="btn"> Learn More </a>
           
           
         </div>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- font awsome -->
+<script src="https://kit.fontawesome.com/f14d152ebc.js" crossorigin="anonymous"></script>
+  <!-- google font -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <!-- font family -->
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- style -->
+   <link rel="stylesheet" href="assets/users.css">
+    <title>Formix Admin Users</title>
+</head>
+<body>
+    <div class="users">
+       
+<aside class="side-bar">
+  <h3>Formix</h3>
+  <ul>
+    <li>
+      <a href="dashborad.html">
+        <i class="fa-solid fa-gauge-high fa-fw"></i>
+        <span>Dashboard</span>
+      </a>
+    </li>
+
+    <li>
+      <a href="users.html">
+        <i class="fa-solid fa-users fa-fw"></i>
+        <span>Users</span>
+      </a>
+    </li>
+
+    <li>
+      <a href="instructors.html">
+        <i class="fa-solid fa-chalkboard-user fa-fw"></i>
+        <span>Instructors</span>
+      </a>
+    </li>
+
+   
+
+     <li>
+      <a href="orders.html">
+    <i class="fa-solid fa-cart-shopping"></i>
+
+        <span>Orders</span>
+      </a>
+    </li>
+    <li>
+      <a href="Reviews.html">
+<i class="fa-regular fa-star"></i>
+  <span>Reviews</span>
+      </a>
+    </li>
+
+    <li>
+      <a href="messages.html">
+        <i class="fa-solid fa-comments fa-fw"></i>
+        <span>Messages</span>
+      </a>
+    </li>
+
+    <li>
+      <a href="settings.html">
+        <i class="fa-solid fa-gear fa-fw"></i>
+        <span>Settings</span>
+      </a>
+    </li>
+  </ul>
+</aside>
+
+        
+        <div class="content">
+            <header class="admin-header">
+  <div class="search-box">
+    <input type="text" placeholder="Search...">
+    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+  </div>
+
+  <div class="header-right">
+    <button class="notification-btn">
+      <i class="fa-solid fa-bell"></i>
+      <span class="notif-count">3</span>
+    </button>
+    <div class="profile">
+      <img src="../assets/images/testimonials/testi1.png" alt="Profile">
+    </div>
+  </div>
+</header>
+
+
+            <section>
+              <div class="heade-users">
+
+                <div class="main-title">
+                    <h2>Users Management </h2>
+                    <p>Manage all registered users, instructors, and admins.</p>
+                </div>
+                   <button class="btn-primary">
+        <i class="fa-solid fa-user-plus"></i>
+        Add New User
+      </button>
+              </div>
+
+  
+  <!-- Top Actions -->
+  <div class="users-actions">
+    <div class="users-search">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" placeholder="Search users...">
+    </div>
+
+    <div class="users-buttons">
+      <button class="btn-outline">
+        <i class="fa-solid fa-filter"></i>
+        Filter
+      </button>
+      <button class="btn-outline">
+        <i class="fa-solid fa-file-export"></i>
+        Export
+      </button>
+   
+    </div>
+  </div>
+
+  <!-- Users Table -->
+  <div class="table-wrapper">
+    <table class="users-table">
+      <thead>
+        <tr>
+          <th>User</th>
+          <th>Role</th>
+          <th>Status</th>
+          <th>Joined Date</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td class="user-info">
+            <div class="avatar">A</div>
+            <div class="email">
+              <strong>Alice Johnson</strong>
+              <span>alice@example.com</span>
+            </div>
+          </td>
+          <td><span class="role admin">Admin</span></td>
+          <td><span class="status active">Active</span></td>
+          <td>2023-01-15</td>
+          <td class="actions">
+            <i class="fa-solid fa-ellipsis"></i>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="user-info">
+            <div class="avatar ">B</div>
+            <div class="email">
+              <strong>Bob Smith</strong>
+              <span>bob@example.com</span>
+            </div>
+          </td>
+          <td><span class="role instructor">Instructor</span></td>
+          <td><span class="status active">Active</span></td>
+          <td>2023-02-10</td>
+          <td class="actions">
+            <i class="fa-solid fa-ellipsis"></i>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="user-info">
+            <div class="avatar ">C</div>
+            <div class="email">
+              <strong>Charlie Davis</strong>
+              <span>charlie@example.com</span>
+            </div>
+          </td>
+          <td><span class="role user">User</span></td>
+          <td><span class="status blocked">Blocked</span></td>
+          <td>2023-03-05</td>
+          <td class="actions">
+            <i class="fa-solid fa-ellipsis"></i>
+          </td>
+        </tr>
+        <tr>
+          <td class="user-info">
+            <div class="avatar ">C</div>
+            <div class="email">
+              <strong>Charlie Davis</strong>
+              <span>charlie@example.com</span>
+            </div>
+          </td>
+          <td><span class="role user">User</span></td>
+          <td><span class="status blocked">Blocked</span></td>
+          <td>2023-03-05</td>
+          <td class="actions">
+            <i class="fa-solid fa-ellipsis"></i>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+
+
+            </section>
+        </div>
+    </div>
+
+
+
+
+
+
+
+   
+
+</body>
+</html>

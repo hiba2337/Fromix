@@ -1,19 +1,21 @@
-
 <?php
 session_start();
 include "config.php";
+
 $error_msg = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name     = $_POST['name'] ;
-    $email    = $_POST['email'] ;
-    $pass     = $_POST['pass'] ;
-    $phone    = $_POST['phone'] ;
-    $role_id  = $_POST['role_id'] ;
 
-    if (empty($name) || empty($email) || empty($pass) || empty($role_id)) {
+    $name        = trim($_POST['name']);
+    $email       = trim($_POST['email']);
+    $pass        = $_POST['pass'];
+    $phone       = trim($_POST['phone']);
+    $role_choice = $_POST['role_choice'] ?? '';
+
+    if (empty($name) || empty($email) || empty($pass) || empty($role_choice)) {
         $error_msg = "All fields marked with * are required!";
     } else {
+
         $check_sql = "SELECT id FROM users WHERE email='$email' LIMIT 1";
         $check_result = mysqli_query($conn, $check_sql);
 
@@ -22,15 +24,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
             $hashed_pass = password_hash($pass, PASSWORD_DEFAULT);
 
-            $insert_sql = "INSERT INTO users (nom, email, password, telephone , role_id)
-                           VALUES ('$name', '$email', '$hashed_pass', '$phone', '$role_id')";
+            $role_id = 1;
+            $trainer_request = ($role_choice === 'trainer') ? 1 : 0;
+
+            $insert_sql = "INSERT INTO users 
+                (nom, email, password, telephone, role_id, trainer_request)
+                VALUES ('$name', '$email', '$hashed_pass', '$phone', $role_id, $trainer_request)";
 
             if (mysqli_query($conn, $insert_sql)) {
-          $_SESSION['user_id'] = mysqli_insert_id($conn);
-    $_SESSION['user_name'] = $name;
-    $_SESSION['user_email'] = $email;
-header("Location: dashboard.php");           
-exit();
+                $_SESSION['user_id']    = mysqli_insert_id($conn);
+                $_SESSION['user_name']  = $name;
+                $_SESSION['user_email'] = $email;
+
+                header("Location: dashboard.php");
+                exit();
             } else {
                 $error_msg = "Database error: " . mysqli_error($conn);
             }
@@ -40,6 +47,7 @@ exit();
 
 mysqli_close($conn);
 ?>
+
 
 
 <!--sign-up.html-->
@@ -84,12 +92,13 @@ mysqli_close($conn);
     <label>Role</label>
 <div class="role-options">
     <div>
-        <input type="radio" name="role_id" id="student" value="1" required>
-        <label for="student">Student</label>
+       <input type="radio" name="role_choice" id="student" value="student" required>
+<label for="student">Student</label>
     </div>
     <div>
-        <input type="radio" name="role_id" id="trainer" value="2">
-        <label for="trainer">Trainer</label>
+      <input type="radio" name="role_choice" id="trainer" value="trainer">
+<label for="trainer">Trainer</label>
+
     </div>
 </div>
 <?php if (!empty($error_msg)): ?>
